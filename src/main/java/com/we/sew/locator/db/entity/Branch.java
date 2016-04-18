@@ -15,10 +15,14 @@ public class Branch extends UpdateInfoEntity {
     @Column(name = Db.Branch.ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = Db.Branch.NAME, length = 100, nullable = false)
     private String name;
-    @Column(name = Db.Branch.TYPE, nullable = false)
+
+    @ManyToOne
+    @JoinColumn(name = Db.Branch.TYPE_ID)
     private Type type;
+
     @OneToMany(mappedBy = "branch")
     private List<BranchQuestion> questions;
 

@@ -14,12 +14,15 @@ public class QuestionAnswer extends UpdateInfoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = Db.QuestionAnswer.ID, nullable = false)
     private long id;
+
     @ManyToOne
     @JoinColumn(name = Db.QuestionAnswer.QUESTION_ID, nullable = false)
     private Question askedQuestion;
+
     @ManyToOne
     @JoinColumn(name = Db.QuestionAnswer.ANSWER_ID, nullable = false)
     private Answer answer;
+
     @ManyToOne
     @JoinColumn(name = Db.QuestionAnswer.NEXT_QUESTION_ID)
     private Question nextQuestion;

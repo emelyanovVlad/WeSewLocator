@@ -13,10 +13,13 @@ public class Location extends UpdateInfoEntity {
     @Id
     @Column(name = Db.Location.ID, nullable = false)
     private String id;
+
     @Column(name = Db.Location.NAME, nullable = false)
     private String name;
+
     @Column(name = Db.Location.LATITUDE, nullable = false)
     private double latitude;
+
     @Column(name = Db.Location.LONGITUDE, nullable = false)
     private double longitude;
 

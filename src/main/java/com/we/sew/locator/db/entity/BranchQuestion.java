@@ -14,12 +14,15 @@ public class BranchQuestion extends UpdateInfoEntity {
     @Column(name = Db.BranchQuestion.ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @ManyToOne
     @JoinColumn(name = Db.BranchQuestion.BRANCH_ID)
     private Branch branch;
+
     @ManyToOne
     @JoinColumn(name = Db.BranchQuestion.QUESTION_ID)
     private Question question;
+
     @Column(name = Db.BranchQuestion.FIRST)
     private boolean first;
 

@@ -8,25 +8,44 @@ import javax.persistence.*;
  * @author Vladyslav_Yemelianov
  */
 @Entity
-@Table(name = Db.User.TABLE_NAME)
-public class User extends UpdateInfoEntity {
+@Table(name = Db.SystemUser.TABLE_NAME)
+public class SystemUser extends UpdateInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = Db.User.ID)
+    @Column(name = Db.SystemUser.ID)
     private String id;
-    @Column(name = Db.User.EMAIL, nullable = false)
+
+    @Column(name = Db.SystemUser.EMAIL, nullable = false)
     private String email;
-    @Column(name = Db.User.PASSWORD, nullable = false)
+
+    @Column(name = Db.SystemUser.PASSWORD, nullable = false)
     private String password;
-    @Column(name = Db.User.FULL_NAME, nullable = false)
+
+    @Column(name = Db.SystemUser.FULL_NAME, nullable = false)
     private String fullName;
-    @Column(name = Db.User.BIRTH_DATE, nullable = false)
+
+    @Column(name = Db.SystemUser.BIRTH_DATE, nullable = false)
     private int birthDate;
-    @Column(name = Db.User.LAST_LOGIN, nullable = false)
+
+    @Column(name = Db.SystemUser.LAST_LOGIN, nullable = false)
     private int lastLogin;
+
     @ManyToOne
-    @JoinColumn(name = Db.User.ROLE_ID)
+    @JoinColumn(name = Db.SystemUser.ROLE_ID)
     private Role role;
+
+    public SystemUser() {
+    }
+
+    public SystemUser(String id, String email, String password, String fullName, int birthDate, int lastLogin, Role role) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.fullName = fullName;
+        this.birthDate = birthDate;
+        this.lastLogin = lastLogin;
+        this.role = role;
+    }
 
     public String getId() {
         return id;
@@ -89,7 +108,7 @@ public class User extends UpdateInfoEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
+        SystemUser user = (SystemUser) o;
 
         if (birthDate != user.birthDate) return false;
         if (lastLogin != user.lastLogin) return false;
@@ -109,5 +128,19 @@ public class User extends UpdateInfoEntity {
         result = 31 * result + lastLogin;
         result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("SystemUser{");
+        sb.append("id='").append(id).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", fullName='").append(fullName).append('\'');
+        sb.append(", birthDate=").append(birthDate);
+        sb.append(", lastLogin=").append(lastLogin);
+        sb.append(", role=").append(role);
+        sb.append('}');
+        return sb.toString();
     }
 }

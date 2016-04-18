@@ -14,6 +14,7 @@ public class Answer extends UpdateInfoEntity {
     @Column(name = Db.Answer.ID, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(nullable = false)
     private String body;
 

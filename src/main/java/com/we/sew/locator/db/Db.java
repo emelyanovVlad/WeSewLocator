@@ -6,9 +6,9 @@ package com.we.sew.locator.db;
 public class Db {
     public static class UpdateInfo {
         public static final String CREATE_TIME = "create_time";
-        public static final String CREATOR_ID = "id_creator";
+        public static final String CREATOR_ID = "id_user_creator";
         public static final String UPDATE_TIME = "update_time";
-        public static final String UPDATER_ID = "id_updater";
+        public static final String UPDATER_ID = "id_user_updater";
     }
 
     public static class Type {
@@ -43,7 +43,7 @@ public class Db {
         public static final String TABLE_NAME = "branch";
         public static final String ID = "id_branch";
         public static final String NAME = "name";
-        public static final String TYPE = "type";
+        public static final String TYPE_ID = "id_type";
     }
 
     public static class BranchQuestion {
@@ -66,6 +66,7 @@ public class Db {
         public static final String TABLE_NAME = "organization";
         public static final String ID = "id_organization";
         public static final String NAME = "name";
+        public static final String TYPE_ID = "id_type";
         public static final String DESCRIPTION = "description";
         public static final String FOUNDED = "foundation_date";
     }
@@ -75,16 +76,12 @@ public class Db {
         public static final String ID = "id_feedback";
         public static final String BODY = "body";
         public static final String RATING = "rating";
-        public static final String POSTER_ID = "id_poster";
-
+        public static final String POSTER_ID = "id_user";
+        public static final String ORGANIZATION_ID = "id_organization";
     }
 
-    public static class OrganizationFeedback {
-        public static final String TABLE_NAME = "organization_feedback";
-    }
-
-    public static class User {
-        public static final String TABLE_NAME = "user";
+    public static class SystemUser {
+        public static final String TABLE_NAME = "system_user";
         public static final String ID = "id_user";
         public static final String EMAIL = "email";
         public static final String PASSWORD = "password";

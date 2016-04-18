@@ -14,8 +14,17 @@ public class Role extends UpdateInfoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = Db.Role.ID)
     private int id;
+
     @Column(nullable = false, length = 40)
     private String name;
+
+    public Role() {
+    }
+
+    public Role(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public int getId() {
         return id;

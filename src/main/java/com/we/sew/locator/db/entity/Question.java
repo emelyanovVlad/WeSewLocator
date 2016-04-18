@@ -15,13 +15,17 @@ public class Question extends UpdateInfoEntity {
     @Column(name = Db.Question.ID, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(nullable = false, length = 100)
     private String header;
+
     @Column(nullable = false)
     private String body;
+
     @ManyToOne
     @JoinColumn(name = Db.Question.TYPE_ID)
     private Type type;
+
     @OneToMany(mappedBy = "askedQuestion")
     private List<QuestionAnswer> answers;
 

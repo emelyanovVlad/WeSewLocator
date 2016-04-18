@@ -3,8 +3,8 @@ package com.we.sew.locator.db.entity;
 import com.we.sew.locator.db.Db;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 /**
@@ -14,12 +14,17 @@ import javax.persistence.MappedSuperclass;
 public abstract class UpdateInfoEntity {
     @Column(name = Db.UpdateInfo.CREATE_TIME, nullable = false)
     private int creationTime;
-    @Column(name = Db.UpdateInfo.CREATOR_ID, nullable = false)
-    private String creatorId;
+
+    @ManyToOne
+    @JoinColumn(name = Db.UpdateInfo.CREATOR_ID)
+    private SystemUser creator;
+
     @Column(name = Db.UpdateInfo.UPDATE_TIME, nullable = false)
     private int updateTime;
-    @Column(name = Db.UpdateInfo.UPDATER_ID, nullable = false)
-    private String updaterId;
+
+    @ManyToOne
+    @JoinColumn(name = Db.UpdateInfo.UPDATER_ID)
+    private SystemUser updater;
 
     public int getCreationTime() {
         return creationTime;
@@ -29,12 +34,12 @@ public abstract class UpdateInfoEntity {
         this.creationTime = creationTime;
     }
 
-    public String getCreatorId() {
-        return creatorId;
+    public SystemUser getCreator() {
+        return creator;
     }
 
-    public void setCreatorId(String creatorId) {
-        this.creatorId = creatorId;
+    public void setCreator(SystemUser creator) {
+        this.creator = creator;
     }
 
     public int getUpdateTime() {
@@ -45,21 +50,21 @@ public abstract class UpdateInfoEntity {
         this.updateTime = updateTime;
     }
 
-    public String getUpdaterId() {
-        return updaterId;
+    public SystemUser getUpdater() {
+        return updater;
     }
 
-    public void setUpdaterId(String updaterId) {
-        this.updaterId = updaterId;
+    public void setUpdater(SystemUser updater) {
+        this.updater = updater;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("UpdateInfoEntity{");
         sb.append("creationTime=").append(creationTime);
-        sb.append(", creatorId='").append(creatorId).append('\'');
+        sb.append(", creator='").append(creator).append('\'');
         sb.append(", updateTime=").append(updateTime);
-        sb.append(", updaterId=").append(updaterId);
+        sb.append(", updater=").append(updater);
         sb.append('}');
         return sb.toString();
     }
