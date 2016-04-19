@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface SystemUserRepository extends JpaRepository<SystemUser, String> {
+    SystemUser findOneByEmail(String email);
 }

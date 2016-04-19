@@ -96,4 +96,6 @@ public class Db {
         public static final String ID = "id_role";
         public static final String NAME = "name";
     }
+
+    private Db(){}
 }
