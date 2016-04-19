@@ -16,7 +16,7 @@ public class Type extends UpdateInfoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false)
+    @Column(name = Db.Type.NAME, nullable = false, unique = true)
     private String name;
 
     public int getId() {

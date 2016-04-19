@@ -16,10 +16,10 @@ public class Question extends UpdateInfoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = Db.Question.HEADER, nullable = false, length = 100)
     private String header;
 
-    @Column(nullable = false)
+    @Column(name = Db.Question.BODY, nullable = false)
     private String body;
 
     @ManyToOne

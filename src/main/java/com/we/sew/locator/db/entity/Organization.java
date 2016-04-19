@@ -19,7 +19,7 @@ public class Organization extends UpdateInfoEntity {
     @JoinColumn(name = Db.Organization.TYPE_ID)
     private Type type;
 
-    @Column(name = Db.Organization.NAME, nullable = false)
+    @Column(name = Db.Organization.NAME, nullable = false, unique = true)
     private String name;
 
     @Column(name = Db.Organization.DESCRIPTION, nullable = false)

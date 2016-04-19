@@ -16,7 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@ComponentScan("com.we.sew.locator.service.web")
+@ComponentScan("com.we.sew.locator.service.rest")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired

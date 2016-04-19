@@ -58,10 +58,10 @@
 
     <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
         <!--<property name="prefix">-->
-            <!--<value>/WEB-INF/pages/jsp/</value>-->
+            <!--<name>/WEB-INF/pages/jsp/</name>-->
         <!--</property>-->
         <!--<property name="suffix">-->
-            <!--<value>.jsp</value>-->
+            <!--<name>.jsp</name>-->
         <!--</property>-->
     <!--</bean>-->
 

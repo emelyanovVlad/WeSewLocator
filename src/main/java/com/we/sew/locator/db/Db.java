@@ -14,7 +14,7 @@ public class Db {
     public static class Type {
         public static final String TABLE_NAME = "type";
         public static final String ID = "id_type";
-        public static final String NAME = "name";
+        public static final String NAME = "name_value";
     }
 
     public static class Question {
@@ -42,7 +42,7 @@ public class Db {
     public static class Branch {
         public static final String TABLE_NAME = "branch";
         public static final String ID = "id_branch";
-        public static final String NAME = "name";
+        public static final String NAME = "name_value";
         public static final String TYPE_ID = "id_type";
     }
 
@@ -57,7 +57,7 @@ public class Db {
     public static class Location {
         public static final String TABLE_NAME = "location";
         public static final String ID = "id_location";
-        public static final String NAME = "name";
+        public static final String NAME = "name_value";
         public static final String LATITUDE = "latitude";
         public static final String LONGITUDE = "longitude";
     }
@@ -65,7 +65,7 @@ public class Db {
     public static class Organization {
         public static final String TABLE_NAME = "organization";
         public static final String ID = "id_organization";
-        public static final String NAME = "name";
+        public static final String NAME = "name_value";
         public static final String TYPE_ID = "id_type";
         public static final String DESCRIPTION = "description";
         public static final String FOUNDED = "foundation_date";
@@ -94,7 +94,7 @@ public class Db {
     public static class Role {
         public static final String TABLE_NAME = "role";
         public static final String ID = "id_role";
-        public static final String NAME = "name";
+        public static final String NAME = "name_value";
     }
 
     private Db(){}
