@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name = Db.Location.TABLE_NAME)
 public class Location extends UpdateInfoEntity {
     @Id
-    @Column(name = Db.Location.ID, nullable = false)
+    @Column(name = Db.Location.ID, nullable = false, length = 100)
     private String id;
 
     @Column(name = Db.Location.NAME, nullable = false)
