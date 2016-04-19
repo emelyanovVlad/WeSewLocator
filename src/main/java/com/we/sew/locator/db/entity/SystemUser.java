@@ -11,8 +11,7 @@ import javax.persistence.*;
 @Table(name = Db.SystemUser.TABLE_NAME)
 public class SystemUser extends UpdateInfoEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = Db.SystemUser.ID)
+    @Column(name = Db.SystemUser.ID, length = 100)
     private String id;
 
     @Column(name = Db.SystemUser.EMAIL, nullable = false)

@@ -1,6 +1,5 @@
 package com.we.sew.locator.db.entity;
 
-import com.sun.org.apache.xpath.internal.operations.String;
 import com.we.sew.locator.db.Db;
 
 import javax.persistence.*;
@@ -12,12 +11,8 @@ import javax.persistence.*;
 @Table(name = Db.Feedback.TABLE_NAME)
 public class Feedback extends UpdateInfoEntity {
     @Id
-    @Column(name = Db.Feedback.ID)
+    @Column(name = Db.Feedback.ID, length = 100)
     private String id;
-
-    @ManyToOne
-    @JoinColumn(name = Db.Feedback.POSTER_ID)
-    private SystemUser poster;
 
     @ManyToOne
     @JoinColumn(name = Db.Feedback.ORGANIZATION_ID)
@@ -32,9 +27,8 @@ public class Feedback extends UpdateInfoEntity {
     public Feedback() {
     }
 
-    public Feedback(String id, SystemUser poster, String body, int rating) {
+    public Feedback(String id, String body, int rating) {
         this.id = id;
-        this.poster = poster;
         this.body = body;
         this.rating = rating;
     }
@@ -45,14 +39,6 @@ public class Feedback extends UpdateInfoEntity {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public SystemUser getPoster() {
-        return poster;
-    }
-
-    public void setPoster(SystemUser poster) {
-        this.poster = poster;
     }
 
     public String getBody() {
@@ -81,7 +67,6 @@ public class Feedback extends UpdateInfoEntity {
 
         if (rating != feedback.rating) return false;
         if (id != null ? !id.equals(feedback.id) : feedback.id != null) return false;
-        if (poster != null ? !poster.equals(feedback.poster) : feedback.poster != null) return false;
         return body != null ? body.equals(feedback.body) : feedback.body == null;
 
     }
@@ -89,7 +74,6 @@ public class Feedback extends UpdateInfoEntity {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (poster != null ? poster.hashCode() : 0);
         result = 31 * result + (body != null ? body.hashCode() : 0);
         result = 31 * result + rating;
         return result;
@@ -99,7 +83,6 @@ public class Feedback extends UpdateInfoEntity {
     public java.lang.String toString() {
         final StringBuilder sb = new StringBuilder("Feedback{");
         sb.append("id=").append(id);
-        sb.append(", poster=").append(poster);
         sb.append(", body=").append(body);
         sb.append(", rating=").append(rating);
         sb.append('}');

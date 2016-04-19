@@ -82,9 +82,8 @@ public class BasicLocatorConfig {
             factoryBean.setResourceProviders(resourceProviders);
             setProviders(factoryBean);
             return factoryBean.create();
-        } else {
-            return null;
         }
+        return null;
     }
 
     private void setProviders(JAXRSServerFactoryBean factoryBean) {

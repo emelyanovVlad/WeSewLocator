@@ -72,7 +72,7 @@ public class Db {
     }
     
     public static class Feedback {
-        public static final String TABLE_NAME = "organization_feedback";
+        public static final String TABLE_NAME = "feedback";
         public static final String ID = "id_feedback";
         public static final String BODY = "body";
         public static final String RATING = "rating";

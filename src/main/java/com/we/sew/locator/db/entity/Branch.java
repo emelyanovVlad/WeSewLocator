@@ -23,7 +23,7 @@ public class Branch extends UpdateInfoEntity {
     @JoinColumn(name = Db.Branch.TYPE_ID)
     private Type type;
 
-    @OneToMany(mappedBy = "branch")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "branch")
     private List<BranchQuestion> questions;
 
     public int getId() {

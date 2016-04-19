@@ -26,7 +26,7 @@ public class Question extends UpdateInfoEntity {
     @JoinColumn(name = Db.Question.TYPE_ID)
     private Type type;
 
-    @OneToMany(mappedBy = "askedQuestion")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "askedQuestion")
     private List<QuestionAnswer> answers;
 
     public int getId() {
