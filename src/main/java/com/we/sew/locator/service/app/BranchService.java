@@ -2,6 +2,7 @@ package com.we.sew.locator.service.app;
 
 import com.we.sew.locator.bean.BranchBean;
 import com.we.sew.locator.db.entity.Branch;
+import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.service.app.api.IBranchService;
 import org.springframework.stereotype.Service;
 
@@ -13,37 +14,37 @@ import java.util.List;
 @Service
 public class BranchService implements IBranchService {
     @Override
-    public BranchBean getBy(String name) {
+    public Branch getBy(String name) {
         return null;
     }
 
     @Override
-    public List<BranchBean> getAllBy(String name) {
+    public List<Branch> getAllBy(String name) {
         return null;
     }
 
     @Override
-    public void create(BranchBean el) {
+    public void create(BranchBean el, SystemUser creator) {
 
     }
 
     @Override
-    public BranchBean get(Integer integer) {
+    public Branch get(Integer integer) {
         return null;
     }
 
     @Override
-    public List<BranchBean> getAll() {
+    public List<Branch> getAll() {
         return null;
     }
 
     @Override
-    public void update(BranchBean el) {
+    public void update(Branch el, SystemUser updater) {
 
     }
 
     @Override
-    public BranchBean delete(Integer el) {
+    public Branch delete(Integer el) {
         return null;
     }
 }

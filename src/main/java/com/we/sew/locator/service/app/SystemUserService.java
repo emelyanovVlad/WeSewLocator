@@ -1,5 +1,6 @@
 package com.we.sew.locator.service.app;
 
+import com.we.sew.locator.bean.SystemUserBean;
 import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.service.app.api.ISystemUserService;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import java.util.List;
 @Service
 public class SystemUserService implements ISystemUserService {
     @Override
-    public void create(SystemUser el) {
+    public void create(SystemUserBean el, SystemUser creator) {
 
     }
 
@@ -27,7 +28,7 @@ public class SystemUserService implements ISystemUserService {
     }
 
     @Override
-    public void update(SystemUser el) {
+    public void update(SystemUser el, SystemUser updater) {
 
     }
 

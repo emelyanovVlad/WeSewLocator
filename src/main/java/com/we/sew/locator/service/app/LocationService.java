@@ -2,6 +2,7 @@ package com.we.sew.locator.service.app;
 
 import com.we.sew.locator.bean.LocationBean;
 import com.we.sew.locator.db.entity.Location;
+import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.service.app.api.ILocationService;
 import org.springframework.stereotype.Service;
 
@@ -13,37 +14,37 @@ import java.util.List;
 @Service
 public class LocationService implements ILocationService {
     @Override
-    public LocationBean getBy(String name) {
+    public Location getBy(String name) {
         return null;
     }
 
     @Override
-    public List<LocationBean> getAllBy(String name) {
+    public List<Location> getAllBy(String name) {
         return null;
     }
 
     @Override
-    public void create(LocationBean el) {
+    public void create(LocationBean el, SystemUser creator) {
 
     }
 
     @Override
-    public LocationBean get(String s) {
+    public Location get(String s) {
         return null;
     }
 
     @Override
-    public List<LocationBean> getAll() {
+    public List<Location> getAll() {
         return null;
     }
 
     @Override
-    public void update(LocationBean el) {
+    public void update(Location el, SystemUser updater) {
 
     }
 
     @Override
-    public LocationBean delete(String el) {
+    public Location delete(String el) {
         return null;
     }
 }

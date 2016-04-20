@@ -1,6 +1,8 @@
 package com.we.sew.locator.service.app;
 
+import com.we.sew.locator.bean.OrganizationBean;
 import com.we.sew.locator.db.entity.Organization;
+import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.service.app.api.IOrganizationService;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +24,7 @@ public class OrganizationService implements IOrganizationService {
     }
 
     @Override
-    public void create(Organization el) {
+    public void create(OrganizationBean el, SystemUser creator) {
 
     }
 
@@ -37,7 +39,7 @@ public class OrganizationService implements IOrganizationService {
     }
 
     @Override
-    public void update(Organization el) {
+    public void update(Organization el, SystemUser updater) {
 
     }
 

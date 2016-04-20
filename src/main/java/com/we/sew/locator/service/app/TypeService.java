@@ -1,5 +1,7 @@
 package com.we.sew.locator.service.app;
 
+import com.we.sew.locator.bean.TypeBean;
+import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.entity.Type;
 import com.we.sew.locator.service.app.api.ITypeService;
 import org.springframework.stereotype.Service;
@@ -22,7 +24,7 @@ public class TypeService implements ITypeService {
     }
 
     @Override
-    public void create(Type el) {
+    public void create(TypeBean el, SystemUser creator) {
 
     }
 
@@ -37,7 +39,7 @@ public class TypeService implements ITypeService {
     }
 
     @Override
-    public void update(Type el) {
+    public void update(Type el, SystemUser updater) {
 
     }
 

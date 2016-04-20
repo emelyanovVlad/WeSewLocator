@@ -1,6 +1,7 @@
 package com.we.sew.locator.service.app;
 
 import com.we.sew.locator.db.entity.BranchQuestion;
+import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.service.app.api.IBranchQuestionService;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @Service
 public class BranchQuestionService implements IBranchQuestionService {
     @Override
-    public void create(BranchQuestion el) {
+    public void create(BranchQuestion el, SystemUser creator) {
 
     }
 
@@ -27,7 +28,7 @@ public class BranchQuestionService implements IBranchQuestionService {
     }
 
     @Override
-    public void update(BranchQuestion el) {
+    public void update(BranchQuestion el, SystemUser updater) {
 
     }
 

@@ -41,6 +41,14 @@ public class Feedback extends UpdateInfoEntity {
         this.id = id;
     }
 
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
     public String getBody() {
         return body;
     }
@@ -57,7 +65,6 @@ public class Feedback extends UpdateInfoEntity {
         this.rating = rating;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,6 +74,7 @@ public class Feedback extends UpdateInfoEntity {
 
         if (rating != feedback.rating) return false;
         if (id != null ? !id.equals(feedback.id) : feedback.id != null) return false;
+        if (organization != null ? !organization.equals(feedback.organization) : feedback.organization != null) return false;
         return body != null ? body.equals(feedback.body) : feedback.body == null;
 
     }
@@ -74,16 +82,18 @@ public class Feedback extends UpdateInfoEntity {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (organization != null ? organization.hashCode() : 0);
         result = 31 * result + (body != null ? body.hashCode() : 0);
         result = 31 * result + rating;
         return result;
     }
 
     @Override
-    public java.lang.String toString() {
+    public String toString() {
         final StringBuilder sb = new StringBuilder("Feedback{");
-        sb.append("id=").append(id);
-        sb.append(", body=").append(body);
+        sb.append("id='").append(id).append('\'');
+        sb.append(", organization=").append(organization);
+        sb.append(", body='").append(body).append('\'');
         sb.append(", rating=").append(rating);
         sb.append('}');
         return sb.toString();

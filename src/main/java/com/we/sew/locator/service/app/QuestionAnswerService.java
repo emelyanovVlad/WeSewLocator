@@ -1,6 +1,7 @@
 package com.we.sew.locator.service.app;
 
 import com.we.sew.locator.db.entity.QuestionAnswer;
+import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.service.app.api.IQuestionAnswerService;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @Service
 public class QuestionAnswerService implements IQuestionAnswerService {
     @Override
-    public void create(QuestionAnswer el) {
+    public void create(QuestionAnswer el, SystemUser creator) {
 
     }
 
@@ -27,7 +28,7 @@ public class QuestionAnswerService implements IQuestionAnswerService {
     }
 
     @Override
-    public void update(QuestionAnswer el) {
+    public void update(QuestionAnswer el, SystemUser updater) {
 
     }
 

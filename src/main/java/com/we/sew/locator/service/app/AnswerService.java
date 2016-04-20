@@ -2,6 +2,7 @@ package com.we.sew.locator.service.app;
 
 import com.we.sew.locator.bean.AnswerBean;
 import com.we.sew.locator.db.entity.Answer;
+import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.repository.AnswerRepository;
 import com.we.sew.locator.service.app.api.IAnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,27 +19,27 @@ public class AnswerService implements IAnswerService {
     private AnswerRepository answerRepository;
 
     @Override
-    public void create(AnswerBean el) {
+    public void create(AnswerBean el, SystemUser creator) {
 
     }
 
     @Override
-    public AnswerBean get(Integer integer) {
+    public Answer get(Integer integer) {
         return null;
     }
 
     @Override
-    public List<AnswerBean> getAll() {
+    public List<Answer> getAll() {
         return null;
     }
 
     @Override
-    public void update(AnswerBean el) {
+    public void update(Answer el, SystemUser updater) {
 
     }
 
     @Override
-    public AnswerBean delete(Integer el) {
+    public Answer delete(Integer el) {
         return null;
     }
 }

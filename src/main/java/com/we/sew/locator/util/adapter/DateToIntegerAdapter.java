@@ -11,6 +11,8 @@ import java.util.Date;
 public class DateToIntegerAdapter implements EntityAdapter<Integer, Date> {
     @Override
     public Integer adapt(Date el) {
-        return null;
+        StringBuilder intDate = new StringBuilder();
+        intDate.append(el.getYear()).append(el.getMonth()).append(el.getDay());
+        return Integer.parseInt(intDate.toString());
     }
 }

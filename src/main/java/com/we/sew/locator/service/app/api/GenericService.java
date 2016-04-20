@@ -1,19 +1,21 @@
 package com.we.sew.locator.service.app.api;
 
+import com.we.sew.locator.db.entity.SystemUser;
+
 import java.util.List;
 
 /**
  * @author Vladyslav_Yemelianov
  */
-public interface GenericService<T, ID> {
-    void create(T el);
+public interface GenericService<BEAN, DTO, ID> {
+    void create(DTO el, SystemUser creator);
 
-    T get(ID id);
+    BEAN get(ID id);
 
-    List<T> getAll();
+    List<BEAN> getAll();
 
-    void update(T el);
+    void update(BEAN el, SystemUser updater);
 
-    T delete(ID el);
+    BEAN delete(ID el);
 
 }

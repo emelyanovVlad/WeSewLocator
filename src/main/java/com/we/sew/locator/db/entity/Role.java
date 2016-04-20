@@ -15,7 +15,7 @@ public class Role extends UpdateInfoEntity {
     @Column(name = Db.Role.ID)
     private int id;
 
-    @Column(nullable = false, length = 40)
+    @Column(name = Db.Role.NAME, nullable = false, length = 40)
     private String name;
 
     public Role() {
