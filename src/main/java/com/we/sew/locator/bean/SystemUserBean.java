@@ -1,7 +1,5 @@
 package com.we.sew.locator.bean;
 
-import java.util.Date;
-
 /**
  * @author Vladyslav_Yemelianov
  */
@@ -11,7 +9,7 @@ public class SystemUserBean {
 
     private String password;
 
-    private String fullDate;
+    private String fullName;
 
     private String birthDate;
 
@@ -31,12 +29,12 @@ public class SystemUserBean {
         this.password = password;
     }
 
-    public String getFullDate() {
-        return fullDate;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullDate(String fullDate) {
-        this.fullDate = fullDate;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getBirthDate() {

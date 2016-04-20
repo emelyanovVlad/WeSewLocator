@@ -6,5 +6,8 @@ import com.we.sew.locator.db.entity.SystemUser;
 /**
  * @author Vladyslav_Yemelianov
  */
-public interface ISystemUserService extends GenericService<SystemUser, SystemUserBean, String> {
+public interface ISystemUserService extends NamedEntityService<SystemUser, SystemUserBean, String> {
+
+    SystemUser getByEmail(String email);
+
 }
