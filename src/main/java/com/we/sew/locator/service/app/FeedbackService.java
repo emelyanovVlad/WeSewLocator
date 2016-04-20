@@ -49,9 +49,7 @@ public class FeedbackService extends AbstractService implements IFeedbackService
     @Override
     public void update(Feedback el, SystemUser updater) {
         editionUpdateInfoEntityFiller.fill(el, updater);
-        if (!el.equals(get(el.getId()))) {
-            feedbackRepository.save(el);
-        }
+        feedbackRepository.saveAndFlush(el);
     }
 
     @Override

@@ -43,7 +43,7 @@ public class LocationService extends AbstractService implements ILocationService
 
     @Override
     public Location get(String id) {
-        return locationRepository.findOne(id);
+        return locationRepository.getOne(id);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class LocationService extends AbstractService implements ILocationService
     @Override
     public void update(Location el, SystemUser updater) {
         editionUpdateInfoEntityFiller.fill(el, updater);
-        locationRepository.save(el);
+        locationRepository.saveAndFlush(el);
     }
 
     @Override

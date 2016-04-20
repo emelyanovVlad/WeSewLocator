@@ -41,7 +41,7 @@ public class RoleService extends AbstractService implements IRoleService {
 
     @Override
     public Role get(Integer id) {
-        return roleRepository.findOne(id);
+        return roleRepository.getOne(id);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class RoleService extends AbstractService implements IRoleService {
     @Override
     public void update(Role el, SystemUser updater) {
         editionUpdateInfoEntityFiller.fill(el, updater);
-        roleRepository.save(el);
+        roleRepository.saveAndFlush(el);
     }
 
     @Override

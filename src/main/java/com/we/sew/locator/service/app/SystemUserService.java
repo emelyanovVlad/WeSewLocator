@@ -44,7 +44,7 @@ public class SystemUserService extends AbstractService implements ISystemUserSer
     @Override
     public void update(SystemUser el, SystemUser updater) {
         editionUpdateInfoEntityFiller.fill(el, updater);
-        systemUserRepository.save(el);
+        systemUserRepository.saveAndFlush(el);
     }
 
     @Override
