@@ -3,6 +3,7 @@ package com.we.sew.locator.util.adapter;
 import com.we.sew.locator.bean.FeedbackBean;
 import com.we.sew.locator.db.entity.Feedback;
 import com.we.sew.locator.service.app.api.IOrganizationService;
+import com.we.sew.locator.util.adapter.api.EntityAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

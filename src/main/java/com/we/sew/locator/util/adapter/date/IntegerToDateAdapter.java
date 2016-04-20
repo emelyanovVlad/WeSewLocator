@@ -1,5 +1,6 @@
-package com.we.sew.locator.util.adapter;
+package com.we.sew.locator.util.adapter.date;
 
+import com.we.sew.locator.util.adapter.api.EntityAdapter;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;

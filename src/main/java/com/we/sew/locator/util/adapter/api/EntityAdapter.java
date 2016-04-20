@@ -1,4 +1,4 @@
-package com.we.sew.locator.util.adapter;
+package com.we.sew.locator.util.adapter.api;
 
 /**
  * @author Vladyslav_Yemelianov

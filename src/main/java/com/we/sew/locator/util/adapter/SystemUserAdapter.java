@@ -2,6 +2,8 @@ package com.we.sew.locator.util.adapter;
 
 import com.we.sew.locator.bean.SystemUserBean;
 import com.we.sew.locator.db.entity.SystemUser;
+import com.we.sew.locator.util.adapter.api.EntityAdapter;
+import com.we.sew.locator.util.adapter.date.DateStringToIntegerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
@@ -10,7 +12,7 @@ import org.springframework.util.DigestUtils;
  * @author Vladyslav_Yemelianov
  */
 @Component
-public class SystemUserAdapter implements EntityAdapter<SystemUser, SystemUserBean>{
+public class SystemUserAdapter implements EntityAdapter<SystemUser, SystemUserBean> {
 
     @Autowired
     private DateStringToIntegerAdapter dateStringToIntegerAdapter;

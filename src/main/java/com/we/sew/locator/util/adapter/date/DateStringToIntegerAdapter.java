@@ -1,6 +1,7 @@
-package com.we.sew.locator.util.adapter;
+package com.we.sew.locator.util.adapter.date;
 
 import com.we.sew.locator.exc.AdaptationException;
+import com.we.sew.locator.util.adapter.api.EntityAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

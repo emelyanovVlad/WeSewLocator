@@ -2,7 +2,7 @@ package com.we.sew.locator.util.filler;
 
 import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.entity.UpdateInfoEntity;
-import com.we.sew.locator.util.adapter.TimestampToIntegerAdapter;
+import com.we.sew.locator.util.adapter.date.TimestampToIntegerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
