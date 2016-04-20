@@ -5,6 +5,7 @@ import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.repository.SystemUserRepository;
 import com.we.sew.locator.service.app.api.AbstractService;
 import com.we.sew.locator.service.app.api.ISystemUserService;
+import com.we.sew.locator.util.IdGeneratorUtil;
 import com.we.sew.locator.util.adapter.SystemUserAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ public class SystemUserService extends AbstractService implements ISystemUserSer
     @Override
     public void create(SystemUserBean el, SystemUser creator) {
         SystemUser adaptedUser = systemUserAdapter.adapt(el);
+        adaptedUser.setId(IdGeneratorUtil.uuId());
         creationUpdateInfoEntityFiller.fill(adaptedUser, creator);
         systemUserRepository.save(adaptedUser);
     }
