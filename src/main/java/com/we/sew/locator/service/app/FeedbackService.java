@@ -28,7 +28,6 @@ public class FeedbackService extends AbstractService implements IFeedbackService
     @Autowired
     private FeedbackAdapter feedbackAdapter;
 
-
     @Override
     public void create(FeedbackBean el, SystemUser creator) {
         Feedback adaptedFeed = feedbackAdapter.adapt(el);
