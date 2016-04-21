@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Path(Mapping.TYPE)
 @WebService
-public interface ITypeService {
+public interface ITypeWebService {
     @Path(Mapping.ALL)
     @GET
     @Produces(MediaType.APPLICATION_JSON)

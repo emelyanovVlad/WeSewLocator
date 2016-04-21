@@ -17,7 +17,7 @@
 
     <jaxrs:server id="restServer" address="/">
         <jaxrs:serviceBeans>
-            <ref bean="typeService"/>
+            <ref bean="typeWebService"/>
         </jaxrs:serviceBeans>
         <jaxrs:features>
             <cxf:logging/>
