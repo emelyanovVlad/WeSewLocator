@@ -1,12 +1,19 @@
 package com.we.sew.locator.bean;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.Size;
+
 /**
  * @author Vladyslav_Yemelianov
  */
 public class BranchBean {
 
+    @NotBlank
+    @Size(min = 5, max = 100, message = "Must be between 5 and 100 symbols length")
     private String name;
 
+    @NotBlank
     private String typeName;
 
     public String getName() {

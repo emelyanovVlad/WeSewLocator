@@ -1,9 +1,12 @@
 package com.we.sew.locator.bean;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 /**
  * @author Vladyslav_Yemelianov
  */
 public class LocationBean {
+    @NotBlank
     private String name;
 
     private double latitude;

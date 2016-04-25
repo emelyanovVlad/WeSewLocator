@@ -1,14 +1,22 @@
 package com.we.sew.locator.bean;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
+
+
 /**
  * @author Vladyslav_Yemelianov
  */
 public class FeedbackBean {
 
+    @NotBlank
     private String organizationName;
 
+    @NotBlank
     private String body;
 
+    @NotBlank
+    @Range(min = 0, max = 5, message = "Rating between 0 and 5")
     private String rating;
 
     public String getOrganizationName() {
