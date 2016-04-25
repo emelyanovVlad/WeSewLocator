@@ -6,7 +6,7 @@
     <artifactId>we-sew-locator</artifactId>
 
     <version>0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>WeSew Locator</name>
 
     <properties>
@@ -17,7 +17,7 @@
         <cxf.ver>3.1.6</cxf.ver>
         <java.ver>1.8</java.ver>
 
-        <app.port>9001</app.port>
+        <app.port>8080</app.port>
     </properties>
 
     <dependencies>

@@ -18,6 +18,7 @@
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
     <import resource="we-sew-locator-api.xml"/>
+    <!--<import resource="we-sew-security.xml"/>-->
 
     <context:component-scan base-package="com.we.sew.locator"/>
     <jpa:repositories base-package="com.we.sew.locator.db.repository"/>
@@ -55,14 +56,5 @@
           class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
-
-    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-        <!--<property name="prefix">-->
-            <!--<name>/WEB-INF/pages/jsp/</name>-->
-        <!--</property>-->
-        <!--<property name="suffix">-->
-            <!--<name>.jsp</name>-->
-        <!--</property>-->
-    <!--</bean>-->
 
 </beans>
