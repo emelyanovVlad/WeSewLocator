@@ -13,7 +13,7 @@ public class SessionContoller extends AbstractAppController {
 
     @RequestMapping(name = WebUtil.Mapping.LOGIN, method = RequestMethod.GET)
     public String loginPage() {
-        return WebUtil.View.LOGIN_FORM;
+        return WebUtil.View.LOGIN;
     }
 
 }
