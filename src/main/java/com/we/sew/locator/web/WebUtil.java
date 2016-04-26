@@ -25,14 +25,29 @@ public class WebUtil {
         public static final String LOGIN = "/login";
         public static final String LOGOUT = "/logout";
         public static final String REGISTER = "/register";
+        public static final String ROLE = "/role";
+
+        public static final String ADD = "/add";
+        public static final String DELETE = "/delete";
+        public static final String FIND = "/find";
+        public static final String EDIT = "/edit";
     }
 
     public static class View {
         public static final String ADMIN_HOME = "admin/home";
+        public static final String ADMIN_ROLE = "role";
         public static final String LOGIN = "login";
         public static final String LOGOUT = "logout";
         public static final String REGISTER = "register";
         public static final String HOME = "home";
+    }
+
+    public static class ViewEntities {
+        public static final String MAIN_CONTAINER = "mainContainer";
+    }
+
+    public static class Session {
+        public static final String LOGGED_USER = "loggedUser";
     }
 
     private WebUtil() {}
