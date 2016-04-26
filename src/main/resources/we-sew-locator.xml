@@ -18,7 +18,7 @@
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
     <import resource="we-sew-locator-api.xml"/>
-    <import resource="we-sew-security.xml"/>
+    <!--<import resource="we-sew-security.xml"/>-->
 
     <context:component-scan base-package="com.we.sew.locator"/>
     <jpa:repositories base-package="com.we.sew.locator.db.repository"/>

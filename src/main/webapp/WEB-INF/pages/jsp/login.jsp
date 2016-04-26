@@ -7,7 +7,7 @@
 <div class="back-holder">
     <div class="transparent-cover">
         <div class="form-container">
-            <form>
+            <form method="POST" action="/perform_login">
                 <fieldset>
                     <legend>
                         Login
