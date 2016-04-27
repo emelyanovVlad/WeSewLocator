@@ -28,6 +28,8 @@ public class WebUtil {
         public static final String ROLE = "/role";
         public static final String USER = "/user";
         public static final String USERS = "/users";
+        public static final String ORGANIZATION = "/organization";
+        public static final String ORGANIZATIONS = "/organizations";
 
         public static final String ADD = "/add";
         public static final String DELETE = "/delete";

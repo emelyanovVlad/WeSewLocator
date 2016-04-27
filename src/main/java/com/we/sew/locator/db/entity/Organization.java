@@ -3,6 +3,7 @@ package com.we.sew.locator.db.entity;
 import com.we.sew.locator.db.Db;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Vladyslav_Yemelianov
@@ -27,6 +28,9 @@ public class Organization extends UpdateInfoEntity {
 
     @Column(name = Db.Organization.FOUNDED, nullable = false)
     private int foundationDate;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "organization")
+    private List<OrganizationLocation> locations;
 
     public Organization() {
     }
@@ -77,6 +81,14 @@ public class Organization extends UpdateInfoEntity {
 
     public void setFoundationDate(int foundationDate) {
         this.foundationDate = foundationDate;
+    }
+
+    public List<OrganizationLocation> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(List<OrganizationLocation> locations) {
+        this.locations = locations;
     }
 
     @Override

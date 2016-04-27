@@ -15,6 +15,7 @@ public class OrganizationBean {
     private String typeName;
 
     @NotBlank
+    @Pattern(regexp = Consts.TEXT_WITH_NUMBERS)
     private String name;
 
     @NotBlank

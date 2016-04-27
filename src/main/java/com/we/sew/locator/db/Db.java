@@ -70,6 +70,14 @@ public class Db {
         public static final String DESCRIPTION = "description";
         public static final String FOUNDED = "foundation_date";
     }
+
+    public static class OrganizationLocation {
+        public static final String TABLE_NAME = "organization_location";
+        public static final String ID = "id_org_loc";
+        public static final String DESCRIPTION = "description";
+        public static final String LOCATION_ID = "id_location";
+        public static final String ORGANIZATION_ID = "id_organization";
+    }
     
     public static class Feedback {
         public static final String TABLE_NAME = "feedback";

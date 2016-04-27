@@ -3,6 +3,7 @@ package com.we.sew.locator.db.entity;
 import com.we.sew.locator.db.Db;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Vladyslav_Yemelianov
@@ -14,7 +15,7 @@ public class Location extends UpdateInfoEntity {
     @Column(name = Db.Location.ID, nullable = false, length = 100)
     private String id;
 
-    @Column(name = Db.Location.NAME, nullable = false)
+    @Column(name = Db.Location.NAME, nullable = false, unique = true)
     private String name;
 
     @Column(name = Db.Location.LATITUDE, nullable = false)
@@ -22,6 +23,9 @@ public class Location extends UpdateInfoEntity {
 
     @Column(name = Db.Location.LONGITUDE, nullable = false)
     private double longitude;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "location")
+    private List<OrganizationLocation> organizations;
 
     public String getId() {
         return id;
@@ -53,6 +57,14 @@ public class Location extends UpdateInfoEntity {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public List<OrganizationLocation> getOrganizations() {
+        return organizations;
+    }
+
+    public void setOrganizations(List<OrganizationLocation> organizations) {
+        this.organizations = organizations;
     }
 
     @Override
