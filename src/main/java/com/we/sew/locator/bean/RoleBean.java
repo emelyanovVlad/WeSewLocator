@@ -1,5 +1,7 @@
 package com.we.sew.locator.bean;
 
+import com.we.sew.locator.bean.validation.Consts;
+import com.we.sew.locator.web.WebUtil;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Pattern;
@@ -10,7 +12,7 @@ import javax.validation.constraints.Pattern;
 public class RoleBean {
 
     @NotBlank
-    @Pattern(regexp = "[A-Za-z]+")
+    @Pattern(regexp = Consts.CAPITALIZED_WORD)
     private String name;
 
     public String getName() {

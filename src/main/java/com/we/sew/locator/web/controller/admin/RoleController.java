@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -20,8 +21,8 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value = WebUtil.Mapping.ADMIN + WebUtil.Mapping.ROLE)
-public class AdminRoleController extends AbstractAppController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AdminRoleController.class);
+public class RoleController extends AbstractAppController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RoleController.class);
 
     @Autowired
     private IRoleService roleService;
@@ -34,9 +35,7 @@ public class AdminRoleController extends AbstractAppController {
     }
 
     @RequestMapping(value = WebUtil.Mapping.ADD, method = RequestMethod.POST)
-    public String createRole(@RequestParam String name, HttpSession session) {
-        RoleBean roleBean = new RoleBean();
-        roleBean.setName(name);
+    public String createRole(@Valid RoleBean roleBean, HttpSession session) {
 
         roleService.create(roleBean, curUser(session));
         LOGGER.debug(roleBean.getName() + " created.");
@@ -53,7 +52,7 @@ public class AdminRoleController extends AbstractAppController {
 
     @RequestMapping(value = WebUtil.Mapping.FIND, method = RequestMethod.GET)
     public @ResponseBody
-    List<Role> findByName(@PathVariable String name) {
+    List<Role> findByName(@RequestParam String name) {
         return roleService.getAllBy(name);
     }
 
