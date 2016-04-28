@@ -5,6 +5,7 @@ import com.we.sew.locator.db.entity.Role;
 import com.we.sew.locator.service.app.api.IRoleService;
 import com.we.sew.locator.web.WebUtil;
 import com.we.sew.locator.web.controller.AbstractAppController;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,9 @@ public class RoleController extends AbstractAppController {
     @RequestMapping(value = WebUtil.Mapping.FIND, method = RequestMethod.GET)
     public @ResponseBody
     List<Role> findByName(@RequestParam String name) {
+        if (StringUtils.isBlank(name)) {
+            return roleService.getAll();
+        }
         return roleService.getAllBy(name);
     }
 

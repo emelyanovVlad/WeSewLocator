@@ -79,7 +79,7 @@ public class OrganizationController extends AbstractAppController {
     @RequestMapping(value = WebUtil.Mapping.FIND, method = RequestMethod.GET)
     public @ResponseBody List<Organization> find(@RequestParam String name) {
         if (StringUtils.isBlank(name)) {
-            return Collections.emptyList();
+            return organizationService.getAll();
         }
         return organizationService.getAllBy(name);
     }
