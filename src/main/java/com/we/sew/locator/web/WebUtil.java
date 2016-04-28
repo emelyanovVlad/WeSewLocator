@@ -31,6 +31,7 @@ public class WebUtil {
         public static final String ORGANIZATION = "/organization";
         public static final String ORGANIZATIONS = "/organizations";
         public static final String LOCATIONS = "/locations";
+        public static final String ORGANIZATION_LOCATION = "/orgloc";
 
         public static final String ADD = "/add";
         public static final String DELETE = "/delete";

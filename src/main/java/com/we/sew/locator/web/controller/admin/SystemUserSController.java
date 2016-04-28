@@ -82,9 +82,8 @@ public class SystemUsersController extends AbstractAppController {
     @RequestMapping(value = WebUtil.Mapping.FIND, method = RequestMethod.GET)
     public @ResponseBody List<SystemUser> findUsers(@RequestParam String fullName) {
         if (StringUtils.isBlank(fullName)) {
-            return Collections.emptyList();
+            return userService.getAll();
         }
-
         return userService.getAllBy(fullName);
     }
 
