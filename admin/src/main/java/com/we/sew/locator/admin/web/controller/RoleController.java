@@ -20,7 +20,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(value = WebUtil.Mapping.ROLE)
+@RequestMapping(value = WebUtil.Mapping.ROLES)
 public class RoleController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(RoleController.class);
 
@@ -40,7 +40,7 @@ public class RoleController extends AbstractAppController {
         roleService.create(roleBean, curUser(session));
         LOGGER.debug(roleBean.getName() + " created.");
 
-        return WebUtil.redirectTo(WebUtil.Mapping.ROLE);
+        return WebUtil.redirectTo(WebUtil.Mapping.ROLES);
     }
 
     @RequestMapping(value = WebUtil.Mapping.DELETE, method = RequestMethod.POST)

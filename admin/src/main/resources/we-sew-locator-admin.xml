@@ -23,7 +23,6 @@
     <jpa:repositories base-package="com.we.sew.locator.db.repository"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:annotation-driven />
-    <mvc:resources mapping="/clientlibs/**" location="/clientlibs/"/>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
