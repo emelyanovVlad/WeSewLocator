@@ -22,7 +22,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(value = WebUtil.Mapping.ADMIN + WebUtil.Mapping.LOCATIONS)
+@RequestMapping(value = WebUtil.Mapping.LOCATIONS)
 public class LocationController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(LocationController.class);
 

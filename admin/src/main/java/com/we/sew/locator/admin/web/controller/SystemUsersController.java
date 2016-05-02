@@ -25,7 +25,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(value = WebUtil.Mapping.ADMIN + WebUtil.Mapping.USERS)
+@RequestMapping(value = WebUtil.Mapping.USERS)
 public class SystemUsersController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(SystemUsersController.class);
 

@@ -22,7 +22,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(value = WebUtil.Mapping.ADMIN + WebUtil.Mapping.TYPE)
+@RequestMapping(value = WebUtil.Mapping.TYPE)
 public class TypeController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TypeController.class);
 

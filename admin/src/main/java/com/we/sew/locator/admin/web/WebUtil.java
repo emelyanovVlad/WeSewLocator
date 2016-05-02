@@ -20,7 +20,6 @@ public class WebUtil {
 
     public static class Mapping {
         public static final String ROOT = "/";
-        public static final String ADMIN = "/admin";
         public static final String HOME = "/home";
         public static final String LOGIN = "/login";
         public static final String LOGOUT = "/logout";
@@ -45,7 +44,6 @@ public class WebUtil {
     }
 
     public static class View {
-        public static final String ADMIN_HOME = "admin/home";
         public static final String ADMIN_ROLE = "role";
         public static final String LOGIN = "login";
         public static final String LOGOUT = "logout";

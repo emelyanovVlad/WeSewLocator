@@ -18,7 +18,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(value = WebUtil.Mapping.ADMIN + WebUtil.Mapping.ANSWERS)
+@RequestMapping(value = WebUtil.Mapping.ANSWERS)
 public class AnswerController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AnswerController.class);
 

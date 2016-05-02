@@ -17,11 +17,10 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-    <import resource="we-sew-locator-api.xml"/>
-    <!--<import resource="we-sew-security.xml"/>-->
+    <!--<import resource="we-sew-security-admin.xml"/>-->
 
     <context:component-scan base-package="com.we.sew.locator"/>
-    <jpa:repositories base-package="com.we.sew.db.repository"/>
+    <jpa:repositories base-package="com.we.sew.locator.db.repository"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:annotation-driven />
     <mvc:resources mapping="/clientlibs/**" location="/clientlibs/"/>
@@ -43,11 +42,12 @@
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
-        <property name="packagesToScan" value="com.we.sew.db.entity"/>
+        <property name="packagesToScan" value="com.we.sew.locator.db.entity"/>
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
             </props>
         </property>
     </bean>

@@ -9,6 +9,7 @@
     <modules>
         <module>admin</module>
         <module>core</module>
+        <module>client</module>
     </modules>
     <packaging>pom</packaging>
     <name>WeSew Locator</name>
@@ -20,8 +21,6 @@
         <spring.sec.ver>4.0.4.RELEASE</spring.sec.ver>
         <cxf.ver>3.1.6</cxf.ver>
         <java.ver>1.8</java.ver>
-
-        <app.port>9080</app.port>
     </properties>
 
     <dependencyManagement>
@@ -164,15 +163,6 @@
                     <groupId>org.eclipse.jetty</groupId>
                     <artifactId>jetty-maven-plugin</artifactId>
                     <version>9.2.11.v20150529</version>
-                    <configuration>
-                        <scanIntervalSeconds>10</scanIntervalSeconds>
-                        <webApp>
-                            <contextPath>/</contextPath>
-                        </webApp>
-                        <httpConnector>
-                            <port>${app.port}</port>
-                        </httpConnector>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

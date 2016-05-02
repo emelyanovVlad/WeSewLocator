@@ -21,7 +21,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(value = WebUtil.Mapping.ADMIN + WebUtil.Mapping.ORGANIZATION_LOCATION)
+@RequestMapping(value = WebUtil.Mapping.ORGANIZATION_LOCATION)
 public class OrganizationLocationController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrganizationLocationController.class);
     private static final String ADD_MSG_FORMAT = "%s added to %s";
