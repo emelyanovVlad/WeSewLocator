@@ -28,8 +28,8 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value = WebUtil.Mapping.ADMIN + WebUtil.Mapping.USERS)
-public class SystemUsersController extends AbstractAppController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(SystemUsersController.class);
+public class SystemUsersController111 extends AbstractAppController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(SystemUsersController111.class);
 
     @Autowired
     private ISystemUserService userService;
