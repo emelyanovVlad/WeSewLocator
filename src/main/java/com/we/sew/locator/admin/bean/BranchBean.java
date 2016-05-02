@@ -1,0 +1,37 @@
+package com.we.sew.locator.admin.bean;
+
+import com.we.sew.locator.admin.bean.validation.Consts;
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+/**
+ * @author Vladyslav_Yemelianov
+ */
+public class BranchBean {
+
+    @NotBlank
+    @Size(min = 5, max = 100, message = "Must be between 5 and 100 symbols length")
+    private String name;
+
+    @NotBlank
+    @Pattern(regexp = Consts.CHARACTER_TEXT)
+    private String typeName;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+}

@@ -21,7 +21,7 @@
     <!--<import resource="we-sew-security.xml"/>-->
 
     <context:component-scan base-package="com.we.sew.locator"/>
-    <jpa:repositories base-package="com.we.sew.locator.db.repository"/>
+    <jpa:repositories base-package="com.we.sew.locator.admin.db.repository"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:annotation-driven />
     <mvc:resources mapping="/clientlibs/**" location="/clientlibs/"/>
@@ -43,7 +43,7 @@
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
-        <property name="packagesToScan" value="com.we.sew.locator.db.entity"/>
+        <property name="packagesToScan" value="com.we.sew.locator.admin.db.entity"/>
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.format_sql">true</prop>
