@@ -2,7 +2,7 @@ package com.we.sew.locator.admin.web.controller;
 
 import com.we.sew.locator.bean.RoleBean;
 import com.we.sew.locator.db.entity.Role;
-import com.we.sew.locator.admin.service.app.api.IRoleService;
+import com.we.sew.locator.admin.service.api.IRoleService;
 import com.we.sew.locator.admin.web.WebUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

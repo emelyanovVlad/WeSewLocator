@@ -2,7 +2,7 @@ package com.we.sew.locator.admin.web.controller;
 
 import com.we.sew.locator.bean.OrganizationLocationBean;
 import com.we.sew.locator.db.entity.OrganizationLocation;
-import com.we.sew.locator.admin.service.app.api.IOrganizationLocationService;
+import com.we.sew.locator.admin.service.api.IOrganizationLocationService;
 import com.we.sew.locator.admin.web.WebUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -2,7 +2,7 @@ package com.we.sew.locator.admin.util.adapter;
 
 import com.we.sew.locator.bean.OrganizationBean;
 import com.we.sew.locator.db.entity.Organization;
-import com.we.sew.locator.admin.service.app.api.ICategoryService;
+import com.we.sew.locator.admin.service.api.ICategoryService;
 import com.we.sew.locator.admin.util.adapter.api.EntityAdapter;
 import com.we.sew.locator.admin.util.adapter.date.DateStringToIntegerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;

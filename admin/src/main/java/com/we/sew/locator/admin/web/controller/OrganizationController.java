@@ -2,8 +2,8 @@ package com.we.sew.locator.admin.web.controller;
 
 import com.we.sew.locator.bean.OrganizationBean;
 import com.we.sew.locator.db.entity.Organization;
-import com.we.sew.locator.admin.service.app.api.IOrganizationService;
-import com.we.sew.locator.admin.service.app.api.ICategoryService;
+import com.we.sew.locator.admin.service.api.IOrganizationService;
+import com.we.sew.locator.admin.service.api.ICategoryService;
 import com.we.sew.locator.admin.util.adapter.date.DateStringToIntegerAdapter;
 import com.we.sew.locator.admin.web.WebUtil;
 import org.apache.commons.lang3.StringUtils;

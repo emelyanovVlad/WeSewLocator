@@ -2,7 +2,7 @@ package com.we.sew.locator.admin.web.controller;
 
 import com.we.sew.locator.bean.AnswerBean;
 import com.we.sew.locator.db.entity.Answer;
-import com.we.sew.locator.admin.service.app.api.IAnswerService;
+import com.we.sew.locator.admin.service.api.IAnswerService;
 import com.we.sew.locator.admin.web.WebUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

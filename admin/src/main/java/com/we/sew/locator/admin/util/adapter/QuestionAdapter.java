@@ -3,7 +3,7 @@ package com.we.sew.locator.admin.util.adapter;
 import com.we.sew.locator.bean.QuestionBean;
 import com.we.sew.locator.db.entity.Category;
 import com.we.sew.locator.db.entity.Question;
-import com.we.sew.locator.admin.service.app.api.ICategoryService;
+import com.we.sew.locator.admin.service.api.ICategoryService;
 import com.we.sew.locator.admin.util.adapter.api.EntityAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

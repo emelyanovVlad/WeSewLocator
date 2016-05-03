@@ -2,8 +2,8 @@ package com.we.sew.locator.admin.util.adapter;
 
 import com.we.sew.locator.bean.OrganizationLocationBean;
 import com.we.sew.locator.db.entity.OrganizationLocation;
-import com.we.sew.locator.admin.service.app.api.ILocationService;
-import com.we.sew.locator.admin.service.app.api.IOrganizationService;
+import com.we.sew.locator.admin.service.api.ILocationService;
+import com.we.sew.locator.admin.service.api.IOrganizationService;
 import com.we.sew.locator.admin.util.adapter.api.EntityAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

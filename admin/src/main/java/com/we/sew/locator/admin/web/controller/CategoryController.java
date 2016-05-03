@@ -2,7 +2,7 @@ package com.we.sew.locator.admin.web.controller;
 
 import com.we.sew.locator.bean.CategoryBean;
 import com.we.sew.locator.db.entity.Category;
-import com.we.sew.locator.admin.service.app.api.ICategoryService;
+import com.we.sew.locator.admin.service.api.ICategoryService;
 import com.we.sew.locator.admin.web.WebUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
