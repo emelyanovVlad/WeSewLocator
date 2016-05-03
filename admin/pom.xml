@@ -7,6 +7,7 @@
         <groupId>com.we.sew.locator</groupId>
         <version>0</version>
     </parent>
+    <packaging>war</packaging>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>locator-admin</artifactId>
@@ -106,7 +107,7 @@
 
         <dependency>
             <groupId>com.we.sew.locator</groupId>
-            <artifactId>core</artifactId>
+            <artifactId>locator-core</artifactId>
             <version>0</version>
             <scope>compile</scope>
         </dependency>

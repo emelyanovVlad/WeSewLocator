@@ -1,6 +1,6 @@
 package com.we.sew.locator.admin.service.rest.api;
 
-import com.we.sew.locator.db.entity.Type;
+import com.we.sew.locator.db.entity.Category;
 import com.we.sew.locator.admin.service.Mapping;
 
 import javax.jws.WebService;
@@ -13,11 +13,11 @@ import java.util.List;
 /**
  * @author Vladyslav_Yemelianov
  */
-@Path(Mapping.TYPE)
+@Path(Mapping.CATEGORY)
 @WebService
 public interface ITypeWebService {
     @Path(Mapping.ALL)
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    List<Type> getAll();
+    List<Category> getAll();
 }

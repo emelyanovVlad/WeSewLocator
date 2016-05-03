@@ -23,8 +23,8 @@ public class Question extends UpdateInfoEntity {
     private String body;
 
     @ManyToOne
-    @JoinColumn(name = Db.Question.TYPE_ID)
-    private Type type;
+    @JoinColumn(name = Db.Question.CATEGORY_ID)
+    private Category category;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "askedQuestion")
     private List<QuestionAnswer> answers;
@@ -53,12 +53,12 @@ public class Question extends UpdateInfoEntity {
         this.body = body;
     }
 
-    public Type getType() {
-        return type;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public List<QuestionAnswer> getAnswers() {
@@ -79,7 +79,7 @@ public class Question extends UpdateInfoEntity {
         if (id != question.id) return false;
         if (header != null ? !header.equals(question.header) : question.header != null) return false;
         if (body != null ? !body.equals(question.body) : question.body != null) return false;
-        return type != null ? type.equals(question.type) : question.type == null;
+        return category != null ? category.equals(question.category) : question.category == null;
 
     }
 
@@ -88,7 +88,7 @@ public class Question extends UpdateInfoEntity {
         int result = id;
         result = 31 * result + (header != null ? header.hashCode() : 0);
         result = 31 * result + (body != null ? body.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (category != null ? category.hashCode() : 0);
         return result;
     }
 
@@ -98,7 +98,7 @@ public class Question extends UpdateInfoEntity {
         sb.append("id=").append(id);
         sb.append(", header='").append(header).append('\'');
         sb.append(", body='").append(body).append('\'');
-        sb.append(", type=").append(type);
+        sb.append(", category=").append(category);
         sb.append('}');
         return sb.toString();
     }

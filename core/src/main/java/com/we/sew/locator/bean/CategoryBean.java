@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern;
 /**
  * @author Vladyslav_Yemelianov
  */
-public class TypeBean {
+public class CategoryBean {
 
     @NotBlank
     @Pattern(regexp = Consts.CHARACTER_TEXT)

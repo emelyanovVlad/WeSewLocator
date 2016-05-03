@@ -3,28 +3,32 @@ package com.we.sew.locator.db.entity;
 import com.we.sew.locator.db.Db;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 /**
  * @author Vladyslav_Yemelianov
  */
 @Entity
-@Table(name = Db.Branch.TABLE_NAME)
-public class Branch extends UpdateInfoEntity {
+@Table(name = Db.Service.TABLE_NAME)
+public class Service extends UpdateInfoEntity {
+
     @Id
-    @Column(name = Db.Branch.ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = Db.Service.ID)
     private int id;
 
-    @Column(name = Db.Branch.NAME, length = 100, nullable = false)
+    @Column(name = Db.Service.NAME)
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = Db.Branch.CATEGORY_ID)
+    @JoinColumn(name = Db.Service.CATEGORY_ID)
     private Category category;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "branch")
-    private List<BranchQuestion> questions;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = Db.ServiceOrganization.TABLE_NAME,
+            joinColumns = @JoinColumn(name = Db.ServiceOrganization.SERVICE_ID, nullable = false, updatable = false),
+            inverseJoinColumns = @JoinColumn(name = Db.ServiceOrganization.ORG_ID, nullable = false, updatable = false))
+    private Set<Organization> organizations;
 
     public int getId() {
         return id;
@@ -50,12 +54,12 @@ public class Branch extends UpdateInfoEntity {
         this.category = category;
     }
 
-    public List<BranchQuestion> getQuestions() {
-        return questions;
+    public Set<Organization> getOrganizations() {
+        return organizations;
     }
 
-    public void setQuestions(List<BranchQuestion> questions) {
-        this.questions = questions;
+    public void setOrganizations(Set<Organization> organizations) {
+        this.organizations = organizations;
     }
 
     @Override
@@ -63,11 +67,11 @@ public class Branch extends UpdateInfoEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Branch branch = (Branch) o;
+        Service service = (Service) o;
 
-        if (id != branch.id) return false;
-        if (name != null ? !name.equals(branch.name) : branch.name != null) return false;
-        return category != null ? category.equals(branch.category) : branch.category == null;
+        if (id != service.id) return false;
+        if (name != null ? !name.equals(service.name) : service.name != null) return false;
+        return category != null ? category.equals(service.category) : service.category == null;
 
     }
 
@@ -81,12 +85,12 @@ public class Branch extends UpdateInfoEntity {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Branch{");
+        final StringBuilder sb = new StringBuilder("Service{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", category=").append(category);
-        sb.append(", questions=").append(questions);
         sb.append('}');
         return sb.toString();
     }
+
 }

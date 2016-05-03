@@ -8,15 +8,15 @@ import javax.persistence.*;
  * @author Vladyslav_Yemelianov
  */
 @Entity
-@Table(name = Db.Type.TABLE_NAME)
-public class Type extends UpdateInfoEntity {
+@Table(name = Db.Category.TABLE_NAME)
+public class Category extends UpdateInfoEntity {
 
     @Id
-    @Column(name = Db.Type.ID, nullable = false)
+    @Column(name = Db.Category.ID, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = Db.Type.NAME, nullable = false, unique = true)
+    @Column(name = Db.Category.NAME, nullable = false, unique = true)
     private String name;
 
     public int getId() {
@@ -40,7 +40,7 @@ public class Type extends UpdateInfoEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Type that = (Type) o;
+        Category that = (Category) o;
 
         if (id != that.id) return false;
         return name != null ? name.equals(that.name) : that.name == null;

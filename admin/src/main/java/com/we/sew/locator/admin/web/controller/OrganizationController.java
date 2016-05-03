@@ -3,7 +3,7 @@ package com.we.sew.locator.admin.web.controller;
 import com.we.sew.locator.bean.OrganizationBean;
 import com.we.sew.locator.db.entity.Organization;
 import com.we.sew.locator.admin.service.app.api.IOrganizationService;
-import com.we.sew.locator.admin.service.app.api.ITypeService;
+import com.we.sew.locator.admin.service.app.api.ICategoryService;
 import com.we.sew.locator.admin.util.adapter.date.DateStringToIntegerAdapter;
 import com.we.sew.locator.admin.web.WebUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -28,7 +28,7 @@ public class OrganizationController extends AbstractAppController {
     @Autowired
     private IOrganizationService organizationService;
     @Autowired
-    private ITypeService typeService;
+    private ICategoryService categoryService;
     @Autowired
     private DateStringToIntegerAdapter adapter;
 
@@ -61,7 +61,7 @@ public class OrganizationController extends AbstractAppController {
         organization.setName(organizationBean.getName());
         organization.setFoundationDate(adapter.adapt(organizationBean.getFoundationDate()));
         organization.setDescription(organizationBean.getDescription());
-        organization.setType(typeService.getBy(organizationBean.getTypeName()));
+        organization.setCategory(categoryService.getBy(organizationBean.getTypeName()));
     }
 
     @RequestMapping(value = WebUtil.Mapping.DELETE, method = RequestMethod.POST)

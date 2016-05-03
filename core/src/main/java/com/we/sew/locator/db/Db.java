@@ -11,9 +11,9 @@ public class Db {
         public static final String UPDATER_ID = "id_user_updater";
     }
 
-    public static class Type {
-        public static final String TABLE_NAME = "type";
-        public static final String ID = "id_type";
+    public static class Category {
+        public static final String TABLE_NAME = "category";
+        public static final String ID = "id_category";
         public static final String NAME = "name_value";
     }
 
@@ -22,7 +22,7 @@ public class Db {
         public static final String ID = "id_question";
         public static final String HEADER = "header";
         public static final String BODY = "body";
-        public static final String TYPE_ID = "id_type";
+        public static final String CATEGORY_ID = "id_category";
     }
 
     public static class Answer {
@@ -43,7 +43,7 @@ public class Db {
         public static final String TABLE_NAME = "branch";
         public static final String ID = "id_branch";
         public static final String NAME = "name_value";
-        public static final String TYPE_ID = "id_type";
+        public static final String CATEGORY_ID = "id_category";
     }
 
     public static class BranchQuestion {
@@ -66,7 +66,7 @@ public class Db {
         public static final String TABLE_NAME = "organization";
         public static final String ID = "id_organization";
         public static final String NAME = "name_value";
-        public static final String TYPE_ID = "id_type";
+        public static final String CATEGORY_ID = "id_category";
         public static final String DESCRIPTION = "description";
         public static final String FOUNDED = "foundation_date";
     }
@@ -103,6 +103,19 @@ public class Db {
         public static final String TABLE_NAME = "role";
         public static final String ID = "id_role";
         public static final String NAME = "name_value";
+    }
+
+    public static class Service {
+        public static final String TABLE_NAME = "service";
+        public static final String ID = "id_service";
+        public static final String NAME = "name_value";
+        public static final String CATEGORY_ID = "id_category";
+    }
+
+    public static class ServiceOrganization {
+        public static final String TABLE_NAME = "service_organization";
+        public static final String SERVICE_ID = "id_service";
+        public static final String ORG_ID = "id_organization";
     }
 
     private Db(){}

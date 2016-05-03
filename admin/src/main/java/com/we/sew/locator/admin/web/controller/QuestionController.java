@@ -3,7 +3,7 @@ package com.we.sew.locator.admin.web.controller;
 import com.we.sew.locator.bean.QuestionBean;
 import com.we.sew.locator.db.entity.Question;
 import com.we.sew.locator.admin.service.app.api.IQuestionService;
-import com.we.sew.locator.admin.service.app.api.ITypeService;
+import com.we.sew.locator.admin.service.app.api.ICategoryService;
 import com.we.sew.locator.admin.web.WebUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -28,7 +28,7 @@ public class QuestionController extends AbstractAppController{
     @Autowired
     private IQuestionService questionService;
     @Autowired
-    private ITypeService typeService;
+    private ICategoryService categoryService;
 
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
@@ -65,7 +65,7 @@ public class QuestionController extends AbstractAppController{
     private void updateOldQuestion(Question question, QuestionBean questionBean) {
         question.setHeader(questionBean.getHeader());
         question.setBody(questionBean.getBody());
-        question.setType(typeService.getBy(questionBean.getTypeName()));
+        question.setCategory(categoryService.getBy(questionBean.getTypeName()));
     }
 
     @RequestMapping(value = WebUtil.Mapping.FIND, method = RequestMethod.GET)

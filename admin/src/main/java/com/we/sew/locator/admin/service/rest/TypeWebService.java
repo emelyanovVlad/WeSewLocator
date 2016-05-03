@@ -1,7 +1,7 @@
 package com.we.sew.locator.admin.service.rest;
 
-import com.we.sew.locator.db.entity.Type;
-import com.we.sew.locator.db.repository.TypeRepository;
+import com.we.sew.locator.db.entity.Category;
+import com.we.sew.locator.db.repository.CategoryRepository;
 import com.we.sew.locator.admin.service.rest.api.ITypeWebService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +14,10 @@ import java.util.List;
 @Service
 public class TypeWebService implements ITypeWebService {
     @Autowired
-    private TypeRepository typeRepository;
+    private CategoryRepository categoryRepository;
 
     @Override
-    public List<Type> getAll() {
-        return typeRepository.findAll();
+    public List<Category> getAll() {
+        return categoryRepository.findAll();
     }
 }

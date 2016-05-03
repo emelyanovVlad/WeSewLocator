@@ -4,6 +4,7 @@ import com.we.sew.locator.db.Db;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Vladyslav_Yemelianov
@@ -17,8 +18,8 @@ public class Organization extends UpdateInfoEntity {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = Db.Organization.TYPE_ID)
-    private Type type;
+    @JoinColumn(name = Db.Organization.CATEGORY_ID)
+    private Category category;
 
     @Column(name = Db.Organization.NAME, nullable = false, unique = true)
     private String name;
@@ -32,12 +33,18 @@ public class Organization extends UpdateInfoEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "organization")
     private List<OrganizationLocation> locations;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = Db.ServiceOrganization.TABLE_NAME,
+            joinColumns = @JoinColumn(name = Db.ServiceOrganization.ORG_ID, nullable = false, updatable = false),
+            inverseJoinColumns = @JoinColumn(name = Db.ServiceOrganization.SERVICE_ID, nullable = false, updatable = false))
+    private Set<Service> services;
+
     public Organization() {
     }
 
-    public Organization(int id, Type type, String name, String description, int foundationDate) {
+    public Organization(int id, Category category, String name, String description, int foundationDate) {
         this.id = id;
-        this.type = type;
+        this.category = category;
         this.name = name;
         this.description = description;
         this.foundationDate = foundationDate;
@@ -51,12 +58,12 @@ public class Organization extends UpdateInfoEntity {
         this.id = id;
     }
 
-    public Type getType() {
-        return type;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getName() {
@@ -91,6 +98,14 @@ public class Organization extends UpdateInfoEntity {
         this.locations = locations;
     }
 
+    public Set<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(Set<Service> services) {
+        this.services = services;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -100,7 +115,7 @@ public class Organization extends UpdateInfoEntity {
 
         if (id != that.id) return false;
         if (foundationDate != that.foundationDate) return false;
-        if (type != null ? !type.equals(that.type) : that.type != null) return false;
+        if (category != null ? !category.equals(that.category) : that.category != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         return description != null ? description.equals(that.description) : that.description == null;
 
@@ -109,7 +124,7 @@ public class Organization extends UpdateInfoEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (category != null ? category.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + foundationDate;
@@ -120,7 +135,7 @@ public class Organization extends UpdateInfoEntity {
     public String toString() {
         final StringBuilder sb = new StringBuilder("Organization{");
         sb.append("id=").append(id);
-        sb.append(", type=").append(type);
+        sb.append(", category=").append(category);
         sb.append(", name='").append(name).append('\'');
         sb.append(", description='").append(description).append('\'');
         sb.append(", foundationDate=").append(foundationDate);

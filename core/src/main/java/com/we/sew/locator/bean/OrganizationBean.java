@@ -12,7 +12,7 @@ public class OrganizationBean {
 
     @NotBlank
     @Pattern(regexp = Consts.CHARACTER_TEXT)
-    private String typeName;
+    private String categoryName;
 
     @NotBlank
     @Pattern(regexp = Consts.TEXT_WITH_NUMBERS)
@@ -26,11 +26,11 @@ public class OrganizationBean {
     private String foundationDate;
 
     public String getTypeName() {
-        return typeName;
+        return categoryName;
     }
 
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
+    public void setTypeName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public String getName() {
