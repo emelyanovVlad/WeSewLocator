@@ -27,3 +27,78 @@ html, body {
     left:50%;
     transform: translate(-50%, -50%);
 }
+
+.screen-content {
+    width:100%;
+    min-height:100%;
+}
+
+.sidebar {
+    width:230px;
+    height:100%;
+    display:inline-block;
+    position:relative;
+    background-color:#464547;
+}
+
+.user-info {
+    margin: 10px 0 10px 0;
+    display:block;
+    position:relative;
+    height:140px;
+    text-align:center;
+    border-bottom:2px dashed #FFF;
+}
+
+.sidebar-avatar {
+    width:200px;
+    margin:0 auto;
+}
+
+.sidebar-avatar img {
+    width:100px;
+    height:100px;
+    border-radius:50%;
+}
+
+.sidebar-personal h4 {
+    margin: 10px 0 10px 0;
+    text-transform: uppercase;
+    font-weight:bold;
+    color: #A3C644;
+}
+
+.menu-holder {
+    position:relative;
+    display:block;
+}
+
+.menu {
+    color:#A3C644;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin-left:-35px;
+}
+
+.menu ul li {
+    text-transform: uppercase;
+    margin: 10px 0 10px 0;
+    cursor:pointer;
+    padding:5px;
+
+}
+
+.menu ul li a {
+    text-decoration:none;
+}
+
+.menu ul li:hover, .menu ul li.active {
+    background: #666;
+    border-radius:4px;
+}
+
+.admin-content {
+    display:inline-block;
+}
