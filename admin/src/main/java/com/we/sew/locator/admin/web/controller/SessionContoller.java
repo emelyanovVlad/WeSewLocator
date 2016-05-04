@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class SessionContoller extends AbstractAppController {
 
-    @RequestMapping(name = WebUtil.Mapping.LOGIN, method = RequestMethod.GET)
+    @RequestMapping(value = WebUtil.Mapping.LOGIN, method = RequestMethod.GET)
     public String loginPage() {
         return WebUtil.View.LOGIN;
     }
