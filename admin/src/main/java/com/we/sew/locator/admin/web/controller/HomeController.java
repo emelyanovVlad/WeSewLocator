@@ -10,8 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(name = WebUtil.Mapping.HOME)
-public class AdminHomeController extends AbstractAppController {
+@RequestMapping(value = WebUtil.Mapping.HOME)
+public class HomeController extends AbstractAppController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getPage() {

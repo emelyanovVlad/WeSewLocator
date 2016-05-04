@@ -7,16 +7,17 @@
 <div class="back-holder">
     <div class="transparent-cover">
         <div class="form-container">
-            <form method="POST" action="/perform_login">
+            <form class="form-horizontal" method="POST" action="/perform_login">
                 <fieldset>
-                    <legend>
-                        Login
-                    </legend>
-                    <label for="loginId">Login</label>
-                    <input id="loginId" type="text" name="login">
-                    <label for="passwordId">Password</label>
-                    <input id="passwordId" type="text" name="password">
-                    <input type="submit" value="Go on">
+                    <div class="form-group">
+                        <input class="form-control" id="loginId" type="text" name="login" placeholder="Login">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="password" type="text" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary full-width" type="submit">Go on</button>
+                    </div>
                 </fieldset>
             </form>
         </div>
