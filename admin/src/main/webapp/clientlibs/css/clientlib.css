@@ -1,5 +1,29 @@
 html, body {
     margin:0;
     padding:0;
+    min-height:100%;
 }
 
+.full-width {
+    width:100%;
+}
+
+.back-holder {
+    width:100%;
+    height:100%;
+    background-image: url("../img/login-bck.jpg");
+}
+
+.transparent-cover {
+    background-color:rgba(70, 69, 71, 0.7);
+    width:100%;
+    height:100%;
+}
+
+.form-container {
+    position:absolute;
+    width:330px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
