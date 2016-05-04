@@ -26,8 +26,82 @@
         </div>
     </div>
     <div class="admin-content">
+        <div class="options">
+
+        </div>
+        <div class="data">
+            <table class="table table-striped table-hover table-bordered" id="example">
+                <thead>
+                <tr>
+                    <th>Sites</th>
+                    <th>Names</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>SitePoint</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Learnable</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+                <tr>
+                    <td>Flippa</td>
+                    <td>SitePoint</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
 
     </div>
 </div>
+<script>
+  $(function(){
+    $("#example").dataTable();
+  })
+</script>
 </body>
 </html>

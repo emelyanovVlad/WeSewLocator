@@ -45,7 +45,7 @@ html, body {
     margin: 10px 0 10px 0;
     display:block;
     position:relative;
-    height:140px;
+    height:150px;
     text-align:center;
     border-bottom:2px dashed #FFF;
 }
@@ -53,6 +53,7 @@ html, body {
 .sidebar-avatar {
     width:200px;
     margin:0 auto;
+    vertical-align:top;
 }
 
 .sidebar-avatar img {
@@ -73,10 +74,6 @@ html, body {
     display:block;
 }
 
-.menu {
-    color:#A3C644;
-}
-
 .menu ul {
     list-style-type: none;
     margin-left:-35px;
@@ -92,6 +89,8 @@ html, body {
 
 .menu ul li a {
     text-decoration:none;
+    color:#A3C644;
+    font-weight:bold;
 }
 
 .menu ul li:hover, .menu ul li.active {
@@ -101,4 +100,17 @@ html, body {
 
 .admin-content {
     display:inline-block;
+    width: calc(100% - 230px - 55px);
+    margin-left:40px;
+    vertical-align:top;
+}
+
+.data {
+    display:block;
+    margin-top: 10px;
+}
+
+.options {
+    display:block;
+    margin: 10px 0 10px 0;
 }
