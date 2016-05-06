@@ -19,91 +19,29 @@
                 <ul>
                     <li class="active">Home</li>
                     <li data-target="/categories">Categories</li>
-                    <li data-target="/categories">Branches</li>
-                    <li data-target="/categories">Questions</li>
-                    <li data-target="/categories">Answers</li>
+                    <li data-target="/branches">Branches</li>
+                    <li data-target="/questions">Questions</li>
+                    <li data-target="/answers">Answers</li>
+                    <li data-target="/organizations">Organizations</li>
+                    <li data-target="/locations">Locations</li>
+                    <li data-target="/services">Services</li>
+                    <li data-target="/users">Users</li>
+                    <li data-target="/roles">Roles</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="admin-content">
-        <div class="options">
-
-        </div>
-        <div class="data">
-            <table class="table table-striped table-hover table-bordered" id="example">
+        <div class="data" id="data">
+            <table class="table table-striped table-hover table-bordered">
                 <thead>
-                <tr>
-                    <th>Sites</th>
-                    <th>Names</th>
-                </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>SitePoint</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Learnable</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-                <tr>
-                    <td>Flippa</td>
-                    <td>SitePoint</td>
-                </tr>
-
                 </tbody>
             </table>
-
         </div>
-
     </div>
 </div>
-<script>
-  $(function(){
-    $("#example").dataTable();
-  })
-</script>
 <ctag:footer/>
 </body>
 </html>
