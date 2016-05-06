@@ -22,8 +22,6 @@ public class WebUtil {
         public static final String ROOT = "/";
         public static final String HOME = "/home";
         public static final String LOGIN = "/login";
-        public static final String LOGOUT = "/logout";
-        public static final String REGISTER = "/register";
         public static final String ROLES = "/roles";
         public static final String USER = "/user";
         public static final String USERS = "/users";
@@ -31,7 +29,7 @@ public class WebUtil {
         public static final String ORGANIZATIONS = "/organizations";
         public static final String LOCATIONS = "/locations";
         public static final String ORGANIZATION_LOCATION = "/orgloc";
-        public static final String CATEGORY = "/category";
+        public static final String CATEGORIES = "/categories";
         public static final String QUESTION = "/question";
         public static final String QUESTIONS = "/questions";
         public static final String ANSWER = "/answer";

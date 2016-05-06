@@ -22,7 +22,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(value = WebUtil.Mapping.CATEGORY)
+@RequestMapping(value = WebUtil.Mapping.CATEGORIES)
 public class CategoryController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CategoryController.class);
 

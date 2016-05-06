@@ -17,10 +17,11 @@
         <div class="full-width menu-holder">
             <div class="menu">
                 <ul>
-                    <li class="active"><a>Some</a></li>
-                    <li><a>Some</a></li>
-                    <li><a>Some</a></li>
-                    <li><a>Some</a></li>
+                    <li class="active">Home</li>
+                    <li data-target="/categories">Categories</li>
+                    <li data-target="/categories">Branches</li>
+                    <li data-target="/categories">Questions</li>
+                    <li data-target="/categories">Answers</li>
                 </ul>
             </div>
         </div>
@@ -103,5 +104,6 @@
     $("#example").dataTable();
   })
 </script>
+<ctag:footer/>
 </body>
 </html>

@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Vladyslav_Yemelianov
  */
 @Controller
-@RequestMapping(value = WebUtil.Mapping.HOME)
+@RequestMapping(value = {WebUtil.Mapping.HOME, WebUtil.Mapping.ROOT})
 public class HomeController extends AbstractAppController {
 
     @RequestMapping(method = RequestMethod.GET)
