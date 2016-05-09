@@ -45,9 +45,10 @@ function renewTableFor(mapping) {
 
   var table = TableBuilder(columns);
 
-  $('#data').empty();
-  $('#data').append(table);
-  $('#data').dataTable({
+  var tableDiv = $('#data');
+  tableDiv.empty();
+  tableDiv.append(table);
+  table.dataTable({
     data: data,
     destroy: true
   });

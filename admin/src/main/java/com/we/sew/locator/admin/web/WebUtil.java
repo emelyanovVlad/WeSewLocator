@@ -34,6 +34,8 @@ public class WebUtil {
         public static final String QUESTIONS = "/questions";
         public static final String ANSWER = "/answer";
         public static final String ANSWERS = "/answers";
+        public static final String BRANCHES = "/branches";
+        public static final String BRANCH = "/branch";
 
         public static final String ADD = "/add";
         public static final String DELETE = "/delete";
