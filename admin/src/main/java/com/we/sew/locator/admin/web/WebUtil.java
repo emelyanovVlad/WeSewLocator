@@ -6,14 +6,6 @@ package com.we.sew.locator.admin.web;
 public class WebUtil {
     public static final String REDIRECT = "redirect:";
 
-    public static String buildUrl(String... urls) {
-        StringBuilder finalUrl = new StringBuilder();
-        for (String url : urls) {
-            finalUrl.append(url);
-        }
-        return finalUrl.toString();
-    }
-
     public static String redirectTo(String mapping) {
         return REDIRECT + mapping;
     }

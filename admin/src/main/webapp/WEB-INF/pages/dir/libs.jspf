@@ -2,4 +2,6 @@
 
 <%@ taglib tagdir="/WEB-INF/tags" prefix="ctag" %>
 
+<%@ taglib tagdir="/WEB-INF/tags/forms/create" prefix="formc" %>
+
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>

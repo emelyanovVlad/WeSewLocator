@@ -26,12 +26,15 @@
                     <li data-target="/locations">Locations</li>
                     <li data-target="/services">Services</li>
                     <li data-target="/users">Users</li>
-                    <li data-target="/roles">Roles</li>
+                    <li data-target="/roles" data-form="role_create">Roles</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="admin-content">
+        <div class="options">
+            <button class="btn btn-default btn-xs" id="create_button">Create</button>
+        </div>
         <div class="data" id="data">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
@@ -43,5 +46,8 @@
     </div>
 </div>
 <ctag:footer/>
+<div id="create_forms">
+    <formc:role/>
+</div>
 </body>
 </html>
