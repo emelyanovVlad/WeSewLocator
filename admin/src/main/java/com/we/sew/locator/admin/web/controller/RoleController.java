@@ -28,26 +28,24 @@ public class RoleController extends AbstractAppController {
     private IRoleService roleService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView getPage() {
-        ModelAndView roleModel = createMaV(WebUtil.View.ADMIN_ROLE);
-        roleModel.addObject(WebUtil.ViewEntities.MAIN_CONTAINER, roleService.getAll());
-        return roleModel;
+    public @ResponseBody List<Role> getAll() {
+        return roleService.getAll();
     }
 
     @RequestMapping(value = WebUtil.Mapping.ADD, method = RequestMethod.POST)
-    public String createRole(@Valid RoleBean roleBean, HttpSession session) {
+    public @ResponseBody String createRole(@Valid RoleBean roleBean, HttpSession session) {
 
         roleService.create(roleBean, curUser(session));
         LOGGER.debug(roleBean.getName() + " created.");
 
-        return WebUtil.redirectTo(WebUtil.Mapping.ROLES);
+        return roleBean.getName();
     }
 
     @RequestMapping(value = WebUtil.Mapping.DELETE, method = RequestMethod.POST)
-    public String deleteRole(@RequestParam int roleId) {
+    public @ResponseBody String deleteRole(@RequestParam int roleId) {
         Role deletedRole = roleService.delete(roleId);
         LOGGER.warn(deletedRole.toString() + " was deleted.");
-        return deletedRole.toString();
+        return deletedRole.getName();
     }
 
     @RequestMapping(value = WebUtil.Mapping.FIND, method = RequestMethod.GET)
@@ -60,12 +58,12 @@ public class RoleController extends AbstractAppController {
     }
 
     @RequestMapping(value = WebUtil.Mapping.EDIT, method = RequestMethod.POST)
-    public String editRole(@RequestParam int roleId, @RequestParam String roleName, HttpSession session) {
-        Role foundedRole = roleService.get(roleId);
-        foundedRole.setName(roleName);
-        roleService.update(foundedRole, curUser(session));
+    public @ResponseBody String editRole(@RequestParam int roleId, @Valid RoleBean roleBean, HttpSession session) {
+        Role foundRole = roleService.get(roleId);
+        foundRole.setName(roleBean.getName());
+        roleService.update(foundRole, curUser(session));
 
-        return "Role updated.";
+        return foundRole + " role updated.";
     }
 
 }

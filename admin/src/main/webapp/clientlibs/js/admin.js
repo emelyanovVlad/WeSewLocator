@@ -31,9 +31,23 @@ $(document).ready(function() {
   function getTableColumnsFor(mapping) {
     switch (mapping) {
       case '/categories':
-        return ['ID', 'Name'];
+        return ['ID', 'Name', 'Created', 'Created by ', 'Updated', 'Updated by'];
+      case '/branches':
+        return ['ID', 'Name', 'Category', 'Created', 'Created by ', 'Updated', 'Updated by'];
       case '/questions':
-        return ['ID', 'Header', 'Body', 'Category'];
+        return ['ID', 'Header', 'Body', 'Category', 'Created', 'Created by ', 'Updated', 'Updated by'];
+      case '/answers':
+        return ['ID', 'Body', 'Created', 'Created by ', 'Updated', 'Updated by'];
+      case '/organizations':
+        return ['ID', 'Name', 'Description', 'Foundation date', 'Category', 'Created', 'Created by ', 'Updated', 'Updated by'];
+      case '/locations':
+        return ['ID', 'Name', 'Lat', 'Long', 'Created', 'Created by ', 'Updated', 'Updated by'];
+      case '/services':
+        return ['ID', 'Name', 'Category', 'Created', 'Created by ', 'Updated', 'Updated by'];
+      case '/users':
+        return ['ID', 'Full Name', 'Email', 'Birth date', 'Last login', 'Created', 'Created by ', 'Updated', 'Updated by'];
+      case '/roles':
+        return ['ID', 'Name', 'Created', 'Created by ', 'Updated', 'Updated by'];
     default:
     return '';
   }
