@@ -7,7 +7,7 @@
 <div class="back-holder">
     <div class="transparent-cover">
         <div class="form-container">
-            <form class="form-horizontal" method="POST" action="/perform_login">
+            <form name="loginForm" class="form-horizontal" method="POST" action="/login">
                 <fieldset>
                     <div class="form-group">
                         <input class="form-control" id="loginId" type="text" name="login" placeholder="Login">
