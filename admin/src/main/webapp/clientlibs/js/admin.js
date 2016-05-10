@@ -74,6 +74,27 @@ $(document).ready(function () {
         $createForms.find('#' + currentEntity.data('form')).modal('show');
     }
 
+    function ajaxCreationSuccessHandler(data) {
+        showSuccessBlack(data + ' was created');
+    }
+
+    function submitFormButtonClicked() {
+        var $createForms = $('#create_forms'),
+            currentEntity = $('.menu').find('li.active'),
+            form = $createForms.find('#' + currentEntity.data('form')).find('form');
+
+        $.ajax({
+            url: form.attr('action'),
+            type: 'POST',
+            data: form.serializeArray(),
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: ajaxCreationSuccessHandler,
+            error: ajaxErrorHandler
+        });
+    }
+
     function initMenu() {
         var menu = $('.menu');
         var menuItems = $(menu).find('li');
@@ -84,11 +105,20 @@ $(document).ready(function () {
 
     function initForms() {
         $('#create_button').on('click', createButtonClickedHandler);
+        $('#create_forms').find('button[type=submit]').each(function() {
+            $(this).on('click', submitFormButtonClicked);
+        })
     }
 });
 
 function ajaxErrorHandler(data) {
     showErrorBlock(data.statusText);
+}
+
+function showSuccessBlock(msg) {
+    var $success = $('#success');
+    $success.find("span").text(msg);
+    $success.show().delay(5000).fadeOut();
 }
 
 function showErrorBlock(msg) {

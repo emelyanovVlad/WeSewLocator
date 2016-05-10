@@ -12,6 +12,13 @@ import java.sql.Timestamp;
 public class TimestampToIntegerAdapter implements EntityAdapter<Integer, Timestamp> {
     @Override
     public Integer adapt(Timestamp el) {
-        return null;
+        StringBuilder intDate = new StringBuilder();
+        intDate.append(el.getYear())
+                .append(el.getMonth())
+                .append(el.getDay())
+                .append(el.getHours())
+                .append(el.getMinutes())
+                .append(el.getSeconds());
+        return Integer.parseInt(intDate.toString());
     }
 }

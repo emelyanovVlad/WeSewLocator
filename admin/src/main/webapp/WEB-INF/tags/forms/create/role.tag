@@ -4,17 +4,17 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="/roles/add" method="POST">
                     <fieldset>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Name">
+                            <label for="inputName" class="col-lg-3 control-label">Role name</label>
+                            <div class="col-lg-9">
+                                <input name="name" type="text" class="form-control" id="inputName">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-10 col-lg-offset-2">
-                                <button  type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
