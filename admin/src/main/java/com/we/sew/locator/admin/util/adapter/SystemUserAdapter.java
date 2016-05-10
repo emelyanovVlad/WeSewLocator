@@ -21,7 +21,7 @@ public class SystemUserAdapter implements EntityAdapter<SystemUser, SystemUserBe
     public SystemUser adapt(SystemUserBean el) {
         SystemUser systemUser = new SystemUser();
         systemUser.setEmail(el.getEmail());
-        Integer adaptedBirthDate = dateStringToIntegerAdapter.adapt(el.getBirthDate());
+        Long adaptedBirthDate = dateStringToIntegerAdapter.adapt(el.getBirthDate());
         systemUser.setBirthDate(adaptedBirthDate);
         systemUser.setFullName(el.getFullName());
         systemUser.setPassword(DigestUtils.md5DigestAsHex(el.getPassword().getBytes()));

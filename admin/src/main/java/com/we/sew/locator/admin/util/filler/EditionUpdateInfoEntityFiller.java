@@ -13,12 +13,9 @@ import java.sql.Timestamp;
  */
 @Component
 public class EditionUpdateInfoEntityFiller implements UpdateInfoEntityFiller {
-    @Autowired
-    private TimestampToIntegerAdapter timestampToIntegerAdapter;
     @Override
     public void fill(UpdateInfoEntity entity, SystemUser user) {
-        Timestamp curTime = new Timestamp(System.currentTimeMillis());
-        entity.setUpdateTime(timestampToIntegerAdapter.adapt(curTime));
+        entity.setUpdateTime(System.currentTimeMillis());
         entity.setUpdater(user);
     }
 }

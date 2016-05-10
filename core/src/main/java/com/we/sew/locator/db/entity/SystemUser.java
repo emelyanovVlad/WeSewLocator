@@ -24,10 +24,10 @@ public class SystemUser extends UpdateInfoEntity {
     private String fullName;
 
     @Column(name = Db.SystemUser.BIRTH_DATE, nullable = false)
-    private int birthDate;
+    private long birthDate;
 
     @Column(name = Db.SystemUser.LAST_LOGIN, nullable = false)
-    private int lastLogin;
+    private long lastLogin;
 
     @ManyToOne
     @JoinColumn(name = Db.SystemUser.ROLE_ID)
@@ -78,19 +78,19 @@ public class SystemUser extends UpdateInfoEntity {
         this.fullName = fullName;
     }
 
-    public int getBirthDate() {
+    public long getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(int birthDate) {
+    public void setBirthDate(long birthDate) {
         this.birthDate = birthDate;
     }
 
-    public int getLastLogin() {
+    public long getLastLogin() {
         return lastLogin;
     }
 
-    public void setLastLogin(int lastLogin) {
+    public void setLastLogin(long lastLogin) {
         this.lastLogin = lastLogin;
     }
 
@@ -123,8 +123,8 @@ public class SystemUser extends UpdateInfoEntity {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (fullName != null ? fullName.hashCode() : 0);
-        result = 31 * result + birthDate;
-        result = 31 * result + lastLogin;
+        result = (int) (31 * result + birthDate);
+        result = (int) (31 * result + lastLogin);
         result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
     }

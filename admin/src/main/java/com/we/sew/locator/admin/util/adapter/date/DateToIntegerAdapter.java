@@ -9,11 +9,9 @@ import java.util.Date;
  * @author Vladyslav_Yemelianov
  */
 @Component
-public class DateToIntegerAdapter implements EntityAdapter<Integer, Date> {
+public class DateToIntegerAdapter implements EntityAdapter<Long, Date> {
     @Override
-    public Integer adapt(Date el) {
-        StringBuilder intDate = new StringBuilder();
-        intDate.append(el.getYear()).append(el.getMonth()).append(el.getDay());
-        return Integer.parseInt(intDate.toString());
+    public Long adapt(Date date) {
+        return date.getTime();
     }
 }

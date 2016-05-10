@@ -28,7 +28,7 @@ public class Organization extends UpdateInfoEntity {
     private String description;
 
     @Column(name = Db.Organization.FOUNDED, nullable = false)
-    private int foundationDate;
+    private long foundationDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "organization")
     private List<OrganizationLocation> locations;
@@ -82,11 +82,11 @@ public class Organization extends UpdateInfoEntity {
         this.description = description;
     }
 
-    public int getFoundationDate() {
+    public long getFoundationDate() {
         return foundationDate;
     }
 
-    public void setFoundationDate(int foundationDate) {
+    public void setFoundationDate(long foundationDate) {
         this.foundationDate = foundationDate;
     }
 
@@ -127,7 +127,7 @@ public class Organization extends UpdateInfoEntity {
         result = 31 * result + (category != null ? category.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + foundationDate;
+        result = (int) (31 * result + foundationDate);
         return result;
     }
 

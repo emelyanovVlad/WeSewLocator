@@ -12,14 +12,14 @@ import java.text.SimpleDateFormat;
  * @author Vladyslav_Yemelianov
  */
 @Component
-public class DateStringToIntegerAdapter implements EntityAdapter<Integer, String> {
+public class DateStringToIntegerAdapter implements EntityAdapter<Long, String> {
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
     @Autowired
     private DateToIntegerAdapter dateToIntegerAdapter;
 
     @Override
-    public Integer adapt(String dateString) {
+    public Long adapt(String dateString) {
         try {
             return dateToIntegerAdapter.adapt(dateFormat.parse(dateString));
         } catch (ParseException e) {

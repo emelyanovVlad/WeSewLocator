@@ -10,10 +10,10 @@
             <form name="loginForm" class="form-horizontal" method="POST" action="/login">
                 <fieldset>
                     <div class="form-group">
-                        <input class="form-control" id="loginId" type="text" name="login" placeholder="Login">
+                        <input class="form-control" type="text" name="login" placeholder="Login">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" id="password" type="text" name="password" placeholder="Password">
+                        <input class="form-control" type="password" name="password" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary full-width" type="submit">Go on</button>

@@ -9,16 +9,9 @@ import java.sql.Timestamp;
  * @author Vladyslav_Yemelianov
  */
 @Component
-public class TimestampToIntegerAdapter implements EntityAdapter<Integer, Timestamp> {
+public class TimestampToIntegerAdapter implements EntityAdapter<Long, Timestamp> {
     @Override
-    public Integer adapt(Timestamp el) {
-        StringBuilder intDate = new StringBuilder();
-        intDate.append(el.getYear())
-                .append(el.getMonth())
-                .append(el.getDay())
-                .append(el.getHours())
-                .append(el.getMinutes())
-                .append(el.getSeconds());
-        return Integer.parseInt(intDate.toString());
+    public Long adapt(Timestamp el) {
+        return el.getTime();
     }
 }

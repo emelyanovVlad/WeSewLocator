@@ -13,24 +13,24 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class UpdateInfoEntity {
     @Column(name = Db.UpdateInfo.CREATE_TIME, nullable = false)
-    private int creationTime;
+    private long creationTime;
 
     @ManyToOne
     @JoinColumn(name = Db.UpdateInfo.CREATOR_ID)
     private SystemUser creator;
 
     @Column(name = Db.UpdateInfo.UPDATE_TIME, nullable = false)
-    private int updateTime;
+    private long updateTime;
 
     @ManyToOne
     @JoinColumn(name = Db.UpdateInfo.UPDATER_ID)
     private SystemUser updater;
 
-    public int getCreationTime() {
+    public long getCreationTime() {
         return creationTime;
     }
 
-    public void setCreationTime(int creationTime) {
+    public void setCreationTime(long creationTime) {
         this.creationTime = creationTime;
     }
 
@@ -42,11 +42,11 @@ public abstract class UpdateInfoEntity {
         this.creator = creator;
     }
 
-    public int getUpdateTime() {
+    public long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(int updateTime) {
+    public void setUpdateTime(long updateTime) {
         this.updateTime = updateTime;
     }
 
