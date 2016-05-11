@@ -2,6 +2,7 @@
 <%@ include file="/WEB-INF/pages/dir/page.jspf" %>
 <%@ include file="/WEB-INF/pages/dir/libs.jspf" %>
 <html>
+<c:set var="title" scope="page" value="Home | WeSeW Locator"/>
 <ctag:head/>
 <body>
 <div class="screen-content">

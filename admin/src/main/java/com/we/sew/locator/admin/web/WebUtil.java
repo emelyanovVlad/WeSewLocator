@@ -14,6 +14,7 @@ public class WebUtil {
         public static final String ROOT = "/";
         public static final String HOME = "/home";
         public static final String LOGIN = "/login";
+        public static final String AUTH = "/auth";
         public static final String ROLES = "/roles";
         public static final String USER = "/user";
         public static final String USERS = "/users";

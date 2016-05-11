@@ -1,6 +1,7 @@
 <%@ tag language="java" trimDirectiveWhitespaces="true" %>
 
 <head>
+    <title>${title}</title>
     <link rel="stylesheet" type="text/css" href="/clientlibs/css/clientlib.css">
     <link rel="stylesheet" type="text/css" href="/clientlibs/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css">
