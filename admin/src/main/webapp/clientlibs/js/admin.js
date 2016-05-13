@@ -144,6 +144,7 @@ $(document).ready(function() {
       type: 'POST',
       data: form.serialize(),
       cache: false,
+      dataType: 'json',
       contentType: false,
       processData: false,
       success: ajaxCreationSuccessHandler,

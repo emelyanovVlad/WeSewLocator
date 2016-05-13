@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -23,6 +24,7 @@ import java.util.List;
  */
 @Controller
 @Validated
+@PreAuthorize(value = "hasRole('HEADADMIN')")
 @RequestMapping(value = WebUtil.Mapping.ROLES)
 public class RoleController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(RoleController.class);
