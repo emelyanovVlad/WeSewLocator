@@ -34,7 +34,7 @@ public class CategoryService extends AbstractService implements ICategoryService
         Category category = new Category();
         category.setName(el.getName());
 
-        creationUpdateInfoEntityFiller.fill(category, creator);
+        creationUpdaterInfoEntityFiller.fill(category, creator);
         categoryRepository.save(category);
     }
 
@@ -50,7 +50,7 @@ public class CategoryService extends AbstractService implements ICategoryService
 
     @Override
     public void update(Category el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
 
         categoryRepository.saveAndFlush(el);
     }

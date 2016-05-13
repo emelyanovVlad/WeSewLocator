@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = Db.Location.TABLE_NAME)
-public class Location extends UpdateInfoEntity {
+public class Location extends UpdaterInfoEntity {
     @Id
     @Column(name = Db.Location.ID, nullable = false, length = 100)
     private String id;

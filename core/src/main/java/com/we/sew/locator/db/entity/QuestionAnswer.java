@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = Db.QuestionAnswer.TABLE_NAME)
-public class QuestionAnswer extends UpdateInfoEntity {
+public class QuestionAnswer extends UpdaterInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = Db.QuestionAnswer.ID, nullable = false)

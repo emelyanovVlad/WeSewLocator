@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = Db.Branch.TABLE_NAME)
-public class Branch extends UpdateInfoEntity {
+public class Branch extends UpdaterInfoEntity {
     @Id
     @Column(name = Db.Branch.ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

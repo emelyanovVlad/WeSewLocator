@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -36,7 +35,6 @@ public class RoleService extends AbstractService implements IRoleService {
     public void create(RoleBean el, SystemUser creator) {
         Role role = new Role();
         role.setName(ROLE + el.getName().toUpperCase());
-        creationUpdateInfoEntityFiller.fill(role, creator);
         roleRepository.save(role);
     }
 
@@ -55,7 +53,7 @@ public class RoleService extends AbstractService implements IRoleService {
 
     @Override
     public void update(Role el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
         roleRepository.saveAndFlush(el);
     }
 

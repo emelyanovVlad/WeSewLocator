@@ -36,7 +36,7 @@ public class OrganizationService extends AbstractService implements IOrganizatio
     @Override
     public void create(OrganizationBean el, SystemUser creator) {
         Organization adaptedOrg = organizationAdapter.adapt(el);
-        creationUpdateInfoEntityFiller.fill(adaptedOrg, creator);
+        creationUpdaterInfoEntityFiller.fill(adaptedOrg, creator);
         organizationRepository.save(adaptedOrg);
     }
 
@@ -52,7 +52,7 @@ public class OrganizationService extends AbstractService implements IOrganizatio
 
     @Override
     public void update(Organization el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
         organizationRepository.save(el);
     }
 

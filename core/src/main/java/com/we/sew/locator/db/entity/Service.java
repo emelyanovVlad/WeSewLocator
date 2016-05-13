@@ -10,7 +10,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = Db.Service.TABLE_NAME)
-public class Service extends UpdateInfoEntity {
+public class Service extends UpdaterInfoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

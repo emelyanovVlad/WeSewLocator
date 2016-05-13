@@ -37,7 +37,7 @@ public class LocationService extends AbstractService implements ILocationService
     public void create(LocationBean el, SystemUser creator) {
         Location adaptedLocation = locationAdapter.adapt(el);
         adaptedLocation.setId(IdGeneratorUtil.uuId());
-        creationUpdateInfoEntityFiller.fill(adaptedLocation, creator);
+        creationUpdaterInfoEntityFiller.fill(adaptedLocation, creator);
         locationRepository.save(adaptedLocation);
     }
 
@@ -53,7 +53,7 @@ public class LocationService extends AbstractService implements ILocationService
 
     @Override
     public void update(Location el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
         locationRepository.saveAndFlush(el);
     }
 

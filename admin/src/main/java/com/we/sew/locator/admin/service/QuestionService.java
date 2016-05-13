@@ -36,7 +36,7 @@ public class QuestionService extends AbstractService implements IQuestionService
     @Override
     public void create(QuestionBean el, SystemUser creator) {
         Question adaptedQuestion = questionAdapter.adapt(el);
-        creationUpdateInfoEntityFiller.fill(adaptedQuestion, creator);
+        creationUpdaterInfoEntityFiller.fill(adaptedQuestion, creator);
         questionRepository.save(adaptedQuestion);
     }
 
@@ -52,7 +52,7 @@ public class QuestionService extends AbstractService implements IQuestionService
 
     @Override
     public void update(Question el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class OrganizationLocationService extends AbstractService implements IOrg
     @Override
     public void create(OrganizationLocationBean el, SystemUser creator) {
         OrganizationLocation adaptedOrganization = organizationLocationAdapter.adapt(el);
-        creationUpdateInfoEntityFiller.fill(adaptedOrganization, creator);
+        creationUpdaterInfoEntityFiller.fill(adaptedOrganization, creator);
 
         organizationLocationRepository.save(adaptedOrganization);
     }
@@ -43,7 +43,7 @@ public class OrganizationLocationService extends AbstractService implements IOrg
 
     @Override
     public void update(OrganizationLocation el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
 
         organizationLocationRepository.save(el);
     }

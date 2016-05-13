@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = Db.Feedback.TABLE_NAME)
-public class Feedback extends UpdateInfoEntity {
+public class Feedback extends UpdaterInfoEntity {
     @Id
     @Column(name = Db.Feedback.ID, length = 100)
     private String id;

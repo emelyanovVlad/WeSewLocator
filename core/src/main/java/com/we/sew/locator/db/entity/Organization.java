@@ -11,7 +11,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = Db.Organization.TABLE_NAME)
-public class Organization extends UpdateInfoEntity {
+public class Organization extends UpdaterInfoEntity {
     @Id
     @Column(name = Db.Organization.ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -35,7 +35,7 @@ public class BranchService extends AbstractService implements IBranchService {
     @Override
     public void create(BranchBean el, SystemUser creator) {
         Branch adaptedBranch = branchAdapter.adapt(el);
-        creationUpdateInfoEntityFiller.fill(adaptedBranch, creator);
+        creationUpdaterInfoEntityFiller.fill(adaptedBranch, creator);
         branchRepository.save(adaptedBranch);
     }
 
@@ -51,7 +51,7 @@ public class BranchService extends AbstractService implements IBranchService {
 
     @Override
     public void update(Branch el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
         branchRepository.save(el);
     }
 

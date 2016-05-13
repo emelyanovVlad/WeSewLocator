@@ -27,7 +27,6 @@ public class SystemUserService extends AbstractService implements ISystemUserSer
     public void create(SystemUserBean el, SystemUser creator) {
         SystemUser adaptedUser = systemUserAdapter.adapt(el);
         adaptedUser.setId(IdGeneratorUtil.uuId());
-        creationUpdateInfoEntityFiller.fill(adaptedUser, creator);
         systemUserRepository.save(adaptedUser);
     }
 
@@ -43,7 +42,6 @@ public class SystemUserService extends AbstractService implements ISystemUserSer
 
     @Override
     public void update(SystemUser el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
         systemUserRepository.saveAndFlush(el);
     }
 

@@ -23,7 +23,7 @@ public class AnswerService extends AbstractService implements IAnswerService {
     public void create(AnswerBean el, SystemUser creator) {
         Answer answer = new Answer();
         answer.setBody(el.getBody());
-        creationUpdateInfoEntityFiller.fill(answer, creator);
+        creationUpdaterInfoEntityFiller.fill(answer, creator);
         answerRepository.save(answer);
     }
 
@@ -39,7 +39,7 @@ public class AnswerService extends AbstractService implements IAnswerService {
 
     @Override
     public void update(Answer el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
     }
 
     @Override

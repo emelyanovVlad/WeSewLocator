@@ -20,7 +20,7 @@ public class QuestionAnswerService extends AbstractService implements IQuestionA
 
     @Override
     public void create(QuestionAnswer el, SystemUser creator) {
-        creationUpdateInfoEntityFiller.fill(el, creator);
+        creationUpdaterInfoEntityFiller.fill(el, creator);
         questionAnswerRepository.save(el);
     }
 
@@ -36,7 +36,7 @@ public class QuestionAnswerService extends AbstractService implements IQuestionA
 
     @Override
     public void update(QuestionAnswer el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
 
     }
 

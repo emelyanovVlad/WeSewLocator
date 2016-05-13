@@ -42,7 +42,7 @@ public class ServiceService extends AbstractService implements IServiceService {
     @Override
     public void create(ServiceBean el, SystemUser creator) {
         Service adaptedService = serviceAdapter.adapt(el);
-        creationUpdateInfoEntityFiller.fill(adaptedService, creator);
+        creationUpdaterInfoEntityFiller.fill(adaptedService, creator);
         serviceRepository.save(adaptedService);
 
         if (LOGGER.isDebugEnabled()) {
@@ -62,7 +62,7 @@ public class ServiceService extends AbstractService implements IServiceService {
 
     @Override
     public void update(Service el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
         serviceRepository.save(el);
 
         if (LOGGER.isWarnEnabled()) {

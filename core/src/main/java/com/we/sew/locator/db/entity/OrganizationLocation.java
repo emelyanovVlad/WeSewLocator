@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = Db.OrganizationLocation.TABLE_NAME)
-public class OrganizationLocation extends UpdateInfoEntity {
+public class OrganizationLocation extends UpdaterInfoEntity {
 
     @Id
     @Column(name = Db.OrganizationLocation.ID)

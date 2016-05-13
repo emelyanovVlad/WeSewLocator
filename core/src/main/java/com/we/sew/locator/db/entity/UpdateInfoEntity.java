@@ -15,16 +15,8 @@ public abstract class UpdateInfoEntity {
     @Column(name = Db.UpdateInfo.CREATE_TIME, nullable = false)
     private long creationTime;
 
-    @ManyToOne
-    @JoinColumn(name = Db.UpdateInfo.CREATOR_ID)
-    private SystemUser creator;
-
     @Column(name = Db.UpdateInfo.UPDATE_TIME, nullable = false)
     private long updateTime;
-
-    @ManyToOne
-    @JoinColumn(name = Db.UpdateInfo.UPDATER_ID)
-    private SystemUser updater;
 
     public long getCreationTime() {
         return creationTime;
@@ -32,14 +24,6 @@ public abstract class UpdateInfoEntity {
 
     public void setCreationTime(long creationTime) {
         this.creationTime = creationTime;
-    }
-
-    public SystemUser getCreator() {
-        return creator;
-    }
-
-    public void setCreator(SystemUser creator) {
-        this.creator = creator;
     }
 
     public long getUpdateTime() {
@@ -50,21 +34,11 @@ public abstract class UpdateInfoEntity {
         this.updateTime = updateTime;
     }
 
-    public SystemUser getUpdater() {
-        return updater;
-    }
-
-    public void setUpdater(SystemUser updater) {
-        this.updater = updater;
-    }
-
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("UpdateInfoEntity{");
         sb.append("creationTime=").append(creationTime);
-        sb.append(", creator='").append(creator).append('\'');
         sb.append(", updateTime=").append(updateTime);
-        sb.append(", updater=").append(updater);
         sb.append('}');
         return sb.toString();
     }

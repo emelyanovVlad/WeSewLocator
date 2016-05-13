@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = Db.Category.TABLE_NAME)
-public class Category extends UpdateInfoEntity {
+public class Category extends UpdaterInfoEntity {
 
     @Id
     @Column(name = Db.Category.ID, nullable = false)

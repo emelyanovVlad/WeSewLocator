@@ -1,7 +1,7 @@
 package com.we.sew.locator.admin.service.api;
 
-import com.we.sew.locator.admin.util.filler.CreationUpdateInfoEntityFiller;
-import com.we.sew.locator.admin.util.filler.EditionUpdateInfoEntityFiller;
+import com.we.sew.locator.admin.util.filler.CreationUpdaterInfoEntityFiller;
+import com.we.sew.locator.admin.util.filler.EditionUpdaterInfoEntityFiller;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public abstract class AbstractService {
     @Autowired
-    protected CreationUpdateInfoEntityFiller creationUpdateInfoEntityFiller;
+    protected CreationUpdaterInfoEntityFiller creationUpdaterInfoEntityFiller;
     @Autowired
-    protected EditionUpdateInfoEntityFiller editionUpdateInfoEntityFiller;
+    protected EditionUpdaterInfoEntityFiller editionUpdaterInfoEntityFiller;
 }

@@ -20,7 +20,7 @@ public class BranchQuestionService extends AbstractService implements IBranchQue
 
     @Override
     public void create(BranchQuestion el, SystemUser creator) {
-        creationUpdateInfoEntityFiller.fill(el, creator);
+        creationUpdaterInfoEntityFiller.fill(el, creator);
         branchQuestionRepository.save(el);
     }
 
@@ -36,7 +36,7 @@ public class BranchQuestionService extends AbstractService implements IBranchQue
 
     @Override
     public void update(BranchQuestion el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
         branchQuestionRepository.save(el);
     }
 

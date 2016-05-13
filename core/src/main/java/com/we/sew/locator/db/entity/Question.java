@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = Db.Question.TABLE_NAME)
-public class Question extends UpdateInfoEntity {
+public class Question extends UpdaterInfoEntity {
     @Id
     @Column(name = Db.Question.ID, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

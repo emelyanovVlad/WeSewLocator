@@ -27,7 +27,7 @@ public class FeedbackService extends AbstractService implements IFeedbackService
     public void create(FeedbackBean el, SystemUser creator) {
         Feedback adaptedFeed = feedbackAdapter.adapt(el);
         adaptedFeed.setId(IdGeneratorUtil.uuId());
-        creationUpdateInfoEntityFiller.fill(adaptedFeed, creator);
+        creationUpdaterInfoEntityFiller.fill(adaptedFeed, creator);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class FeedbackService extends AbstractService implements IFeedbackService
 
     @Override
     public void update(Feedback el, SystemUser updater) {
-        editionUpdateInfoEntityFiller.fill(el, updater);
+        editionUpdaterInfoEntityFiller.fill(el, updater);
         feedbackRepository.saveAndFlush(el);
     }
 
