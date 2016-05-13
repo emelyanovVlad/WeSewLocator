@@ -12,22 +12,25 @@
                 <img src="/clientlibs/img/def-ava.png"/>
             </div>
             <div class="sidebar-personal">
-                <h4>Vladyslav Yemelianov</h4>
+                <h4>${loggedUser.fullName}</h4>
             </div>
         </div>
         <div class="full-width menu-holder">
             <div class="menu">
                 <ul>
-                    <li class="active">Home</li>
-                    <li data-target="/categories">Categories</li>
-                    <li data-target="/branches">Branches</li>
-                    <li data-target="/questions">Questions</li>
-                    <li data-target="/answers">Answers</li>
-                    <li data-target="/organizations">Organizations</li>
-                    <li data-target="/locations">Locations</li>
-                    <li data-target="/services">Services</li>
-                    <li data-target="/users">Users</li>
-                    <li data-target="/roles" data-form="role_create">Roles</li>
+                    <sec:authorize access="hasAnyRole('HEADADMIN', 'ADMIN', 'DATAMANAGER')">
+                        <li data-target="/categories">Categories</li>
+                        <li data-target="/branches">Branches</li>
+                        <li data-target="/questions">Questions</li>
+                        <li data-target="/answers">Answers</li>
+                        <li data-target="/organizations">Organizations</li>
+                        <li data-target="/locations">Locations</li>
+                        <li data-target="/services">Services</li>
+                    </sec:authorize>
+                    <sec:authorize access="hasRole('HEADADMIN')">
+                        <li data-target="/users" data-form="user_create">Users</li>
+                        <li data-target="/roles" data-form="role_create">Roles</li>
+                    </sec:authorize>
                 </ul>
             </div>
         </div>
@@ -49,6 +52,7 @@
 <ctag:footer/>
 <div id="create_forms">
     <formc:role/>
+    <formc:user/>
 </div>
 </body>
 </html>

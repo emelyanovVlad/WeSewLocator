@@ -97,37 +97,52 @@ $(document).ready(function() {
     var columnDefs = getTableColumnDefsFor(mapping);
     var columns = getTableColumnsAsJSON(columnHeaders, columnDefs);
 
-    var table = TableBuilder(columns);
+    var table = TableBuilder(data, columns);
+  }
 
-    var tableDiv = $('#data');
-    tableDiv.empty();
-    tableDiv.append(table);
-    table.dataTable({
-      data: data,
-      columns: columns,
-      destroy: true
-    });
+  function addOptionTo(select, value, text) {
+        var option = $('<option/>');
+        $(option).attr('value', value).text(text);
+        select.append(option);
+  }
+
+  function initFormSelects(form, mapping) {
+    switch (mapping) {
+        case '/users':
+            var roleSelect = $(form).find('select'),
+                dataUrl = roleSelect.data('target'),
+                data = getDataFrom(dataUrl);
+
+            $(data).each(function() {
+                addOptionTo(roleSelect, this.name, this.name);
+            });
+            return;
+        default:
+            return;
+    }
   }
 
   function createButtonClickedHandler() {
     var $createForms = $('#create_forms'),
       currentEntity = $('.menu').find('li.active');
-    $createForms.find('#' + currentEntity.data('form')).modal('show');
+    var chosenForm = $createForms.find('#' + currentEntity.data('form'));
+    chosenForm.modal('show');
+    initFormSelects(chosenForm, currentEntity.data('target'));
   }
 
   function ajaxCreationSuccessHandler(data) {
     showSuccessBlack(data + ' was created');
   }
 
-  function submitFormButtonClicked() {
+  function submitFormButtonClickedHandler() {
     var $createForms = $('#create_forms'),
       currentEntity = $('.menu').find('li.active'),
       form = $createForms.find('#' + currentEntity.data('form')).find('form');
 
     $.ajax({
-      url: form.attr('action'),
+      url: form.data('target'),
       type: 'POST',
-      data: form.serializeArray(),
+      data: form.serialize(),
       cache: false,
       contentType: false,
       processData: false,
@@ -147,8 +162,9 @@ $(document).ready(function() {
   function initForms() {
     $('#create_button').on('click', createButtonClickedHandler);
     $('#create_forms').find('button[type=submit]').each(function() {
-      $(this).on('click', submitFormButtonClicked);
+      $(this).on('click', submitFormButtonClickedHandler);
     })
+
   }
 });
 
@@ -168,17 +184,26 @@ function showErrorBlock(msg) {
   $error.show().delay(5000).fadeOut();
 }
 
-function TableBuilder(headers) {
+function TableBuilder(data, columns) {
   var table = $('<table/>').addClass('table table-striped table-hover table-bordered'),
     thead = $('<thead/>'),
     tr = $('<tr/>');
   table.append(thead);
   thead.append(tr);
 
-  $(headers).each(function() {
+  $(columns).each(function() {
     var th = $('<th/>');
     tr.append(th);
   });
+
+  var tableDiv = $('#data');
+      tableDiv.empty();
+      tableDiv.append(table);
+      table.dataTable({
+        data: data,
+        columns: columns,
+        destroy: true
+      });
 
   return table;
 }

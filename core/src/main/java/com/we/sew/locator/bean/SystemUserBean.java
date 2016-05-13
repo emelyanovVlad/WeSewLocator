@@ -22,12 +22,16 @@ public class SystemUserBean {
     private String password;
 
     @NotBlank
-    @Pattern(regexp = "[A-Z][a-z]+\\s[A-Z][a-z]+\\s[A-Z][a-z]+")
+    @Pattern(regexp = "([A-Z][a-z]+\\s?)+")
     private String fullName;
 
     @NotBlank
     @Pattern(regexp = Consts.DATE_PATTERN)
     private String birthDate;
+
+    @NotBlank
+    @Pattern(regexp = Consts.CAPITALIZED_WORD)
+    private String roleName;
 
     public String getEmail() {
         return email;
