@@ -45,7 +45,7 @@ $(document).ready(function() {
       case '/services':
         return ['ID', 'Name', 'Category', 'Created', 'Created by ', 'Updated', 'Updated by'];
       case '/users':
-        return ['ID', 'Full Name', 'Email', 'Birth date', 'Last login', 'Created', 'Created by ', 'Updated', 'Updated by'];
+        return ['ID', 'Full Name', 'Email', 'Birth date', 'Role', 'Last login', 'Created', 'Created by ', 'Updated', 'Updated by'];
       case '/roles':
         return ['ID', 'Name', 'Created', 'Created by ', 'Updated', 'Updated by'];
       default:
@@ -70,7 +70,7 @@ $(document).ready(function() {
       case '/services':
         return ['id', 'name', 'category', 'creationTime', 'creator', 'updateTime', 'updater'];
       case '/users':
-        return ['id', 'fullName', 'email', 'birthDate', 'lastLogin', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'fullName', 'email', 'birthDate', 'role', 'lastLogin', 'creationTime', 'creator', 'updateTime', 'updater'];
       case '/roles':
         return ['id', 'name', 'creationTime', 'creator', 'updateTime', 'updater'];
       default:
@@ -131,7 +131,7 @@ $(document).ready(function() {
   }
 
   function ajaxCreationSuccessHandler(data) {
-    showSuccessBlack(data + ' was created');
+    showSuccessBlock(data + ' was created');
   }
 
   function submitFormButtonClickedHandler() {
@@ -142,10 +142,9 @@ $(document).ready(function() {
     $.ajax({
       url: form.data('target'),
       type: 'POST',
-      data: form.serialize(),
+      data: serializeForm(form),
       cache: false,
-      dataType: 'json',
-      contentType: false,
+      contentType: 'application/json',
       processData: false,
       success: ajaxCreationSuccessHandler,
       error: ajaxErrorHandler
@@ -208,3 +207,23 @@ function TableBuilder(data, columns) {
 
   return table;
 }
+
+function serializeForm(form) {
+    var objectGraph = {};
+    function add(objectGraph, name, value) {
+     if(name.length == 1) {
+      objectGraph[name[0]] = value;
+     }
+     else {
+      if(objectGraph[name[0]] == null) {
+       objectGraph[name[0]] = {};
+      }
+      add(objectGraph[name[0]], name.slice(1), value);
+     }
+    };
+
+    $(form).find('input').each(function() {
+      add(objectGraph, $(this).attr('name').split('.'), $(this).val());
+    });
+    return JSON.stringify(objectGraph);
+   };

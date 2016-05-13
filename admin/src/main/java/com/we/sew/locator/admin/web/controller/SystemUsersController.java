@@ -14,10 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -47,7 +44,7 @@ public class SystemUsersController extends AbstractAppController {
     }
 
     @RequestMapping(value = WebUtil.Mapping.ADD, method = RequestMethod.POST)
-    public @ResponseBody String addSystemUser(@Valid AdminSystemUserBean userBean, HttpSession session) {
+    public @ResponseBody String addSystemUser(@Valid @RequestBody AdminSystemUserBean userBean, HttpSession session) {
         userService.create(userBean, curUser(session));
         LOGGER.debug(userBean.getEmail() + " created with role " + userBean.getRoleName());
         return "User created successfully";

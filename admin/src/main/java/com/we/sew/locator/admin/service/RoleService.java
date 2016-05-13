@@ -35,7 +35,7 @@ public class RoleService extends AbstractService implements IRoleService {
     @Override
     public void create(RoleBean el, SystemUser creator) {
         Role role = new Role();
-        role.setName(ROLE + el.getName());
+        role.setName(ROLE + el.getName().toUpperCase());
         creationUpdateInfoEntityFiller.fill(role, creator);
         roleRepository.save(role);
     }

@@ -38,7 +38,7 @@ public class RoleController extends AbstractAppController {
     }
 
     @RequestMapping(value = WebUtil.Mapping.ADD, method = RequestMethod.POST)
-    public @ResponseBody String createRole(@Valid RoleBean roleBean, HttpSession session) {
+    public @ResponseBody String createRole(@Valid @RequestBody RoleBean roleBean, HttpSession session) {
 
         roleService.create(roleBean, curUser(session));
         LOGGER.debug(roleBean.getName() + " created.");
