@@ -18,6 +18,7 @@ import java.util.List;
 public class RoleService extends AbstractService implements IRoleService {
     @Autowired
     private RoleRepository roleRepository;
+    private static final String ROLE = "ROLE_";
 
     @Override
     public Role getBy(String name) {
@@ -32,7 +33,7 @@ public class RoleService extends AbstractService implements IRoleService {
     @Override
     public void create(RoleBean el, SystemUser creator) {
         Role role = new Role();
-        role.setName(el.getName());
+        role.setName(ROLE + el.getName());
         creationUpdateInfoEntityFiller.fill(role, creator);
         roleRepository.save(role);
     }
