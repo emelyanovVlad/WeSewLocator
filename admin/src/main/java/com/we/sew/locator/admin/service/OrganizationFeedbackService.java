@@ -1,6 +1,6 @@
 package com.we.sew.locator.admin.service;
 
-import com.we.sew.locator.bean.FeedbackBean;
+import com.we.sew.locator.bean.OrganizationFeedbackBean;
 import com.we.sew.locator.db.entity.OrganizationFeedback;
 import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.repository.OrganizationFeedbackRepository;
@@ -24,7 +24,7 @@ public class OrganizationFeedbackService extends AbstractService implements IOrg
     private FeedbackAdapter feedbackAdapter;
 
     @Override
-    public void create(FeedbackBean el, SystemUser creator) {
+    public void create(OrganizationFeedbackBean el, SystemUser creator) {
         OrganizationFeedback adaptedFeed = feedbackAdapter.adapt(el);
         adaptedFeed.setId(IdGeneratorUtil.uuId());
         creationUpdaterInfoEntityFiller.fill(adaptedFeed, creator);

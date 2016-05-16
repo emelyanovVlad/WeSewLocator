@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.Range;
 /**
  * @author Vladyslav_Yemelianov
  */
-public class FeedbackBean {
+public class OrganizationFeedbackBean {
 
     @NotBlank
     private String organizationName;

@@ -1,6 +1,6 @@
 package com.we.sew.locator.admin.util.adapter;
 
-import com.we.sew.locator.bean.FeedbackBean;
+import com.we.sew.locator.bean.OrganizationFeedbackBean;
 import com.we.sew.locator.db.entity.OrganizationFeedback;
 import com.we.sew.locator.admin.service.api.IOrganizationService;
 import com.we.sew.locator.admin.util.adapter.api.EntityAdapter;
@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
  * @author Vladyslav_Yemelianov
  */
 @Component
-public class FeedbackAdapter implements EntityAdapter<OrganizationFeedback, FeedbackBean> {
+public class FeedbackAdapter implements EntityAdapter<OrganizationFeedback, OrganizationFeedbackBean> {
     @Autowired
     private IOrganizationService organizationService;
 
     @Override
-    public OrganizationFeedback adapt(FeedbackBean el) {
+    public OrganizationFeedback adapt(OrganizationFeedbackBean el) {
         OrganizationFeedback organizationFeedback = new OrganizationFeedback();
         organizationFeedback.setBody(el.getBody());
         organizationFeedback.setRating(Integer.parseInt(el.getRating()));
