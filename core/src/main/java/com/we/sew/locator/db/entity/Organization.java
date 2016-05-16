@@ -39,15 +39,10 @@ public class Organization extends UpdaterInfoEntity {
             inverseJoinColumns = @JoinColumn(name = Db.ServiceOrganization.SERVICE_ID, nullable = false, updatable = false))
     private Set<Service> services;
 
-    public Organization() {
-    }
+    @OneToMany(mappedBy = "organization")
+    private List<OrganizationFeedback> organizationFeedbacks;
 
-    public Organization(int id, Category category, String name, String description, int foundationDate) {
-        this.id = id;
-        this.category = category;
-        this.name = name;
-        this.description = description;
-        this.foundationDate = foundationDate;
+    public Organization() {
     }
 
     public int getId() {
@@ -104,6 +99,14 @@ public class Organization extends UpdaterInfoEntity {
 
     public void setServices(Set<Service> services) {
         this.services = services;
+    }
+
+    public List<OrganizationFeedback> getOrganizationFeedbacks() {
+        return organizationFeedbacks;
+    }
+
+    public void setOrganizationFeedbacks(List<OrganizationFeedback> organizationFeedbacks) {
+        this.organizationFeedbacks = organizationFeedbacks;
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.we.sew.locator.db.entity;
 import com.we.sew.locator.db.Db;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Vladyslav_Yemelianov
@@ -26,6 +27,9 @@ public class OrganizationLocation extends UpdaterInfoEntity {
     @ManyToOne
     @JoinColumn(name = Db.OrganizationLocation.LOCATION_ID)
     private Location location;
+
+    @OneToMany(mappedBy = "organizationLocation")
+    private List<OrganizationLocationFeedback> organizationLocationsFeedback;
 
     public int getId() {
         return id;
@@ -57,6 +61,14 @@ public class OrganizationLocation extends UpdaterInfoEntity {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public List<OrganizationLocationFeedback> getOrganizationLocationsFeedback() {
+        return organizationLocationsFeedback;
+    }
+
+    public void setOrganizationLocationsFeedback(List<OrganizationLocationFeedback> organizationLocationsFeedback) {
+        this.organizationLocationsFeedback = organizationLocationsFeedback;
     }
 
     @Override
