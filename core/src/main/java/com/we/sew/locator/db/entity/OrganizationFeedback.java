@@ -8,26 +8,26 @@ import javax.persistence.*;
  * @author Vladyslav_Yemelianov
  */
 @Entity
-@Table(name = Db.Feedback.TABLE_NAME)
-public class Feedback extends UpdaterInfoEntity {
+@Table(name = Db.OrganizationFeedback.TABLE_NAME)
+public class OrganizationFeedback extends UpdaterInfoEntity {
     @Id
-    @Column(name = Db.Feedback.ID, length = 100)
+    @Column(name = Db.OrganizationFeedback.ID, length = 100)
     private String id;
 
     @ManyToOne
-    @JoinColumn(name = Db.Feedback.ORGANIZATION_ID)
+    @JoinColumn(name = Db.OrganizationFeedback.ORGANIZATION_ID)
     private Organization organization;
 
-    @Column(name = Db.Feedback.BODY, nullable = false)
+    @Column(name = Db.OrganizationFeedback.BODY, nullable = false)
     private String body;
 
-    @Column(name = Db.Feedback.RATING)
+    @Column(name = Db.OrganizationFeedback.RATING)
     private int rating;
 
-    public Feedback() {
+    public OrganizationFeedback() {
     }
 
-    public Feedback(String id, String body, int rating) {
+    public OrganizationFeedback(String id, String body, int rating) {
         this.id = id;
         this.body = body;
         this.rating = rating;
@@ -70,12 +70,12 @@ public class Feedback extends UpdaterInfoEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Feedback feedback = (Feedback) o;
+        OrganizationFeedback organizationFeedback = (OrganizationFeedback) o;
 
-        if (rating != feedback.rating) return false;
-        if (id != null ? !id.equals(feedback.id) : feedback.id != null) return false;
-        if (organization != null ? !organization.equals(feedback.organization) : feedback.organization != null) return false;
-        return body != null ? body.equals(feedback.body) : feedback.body == null;
+        if (rating != organizationFeedback.rating) return false;
+        if (id != null ? !id.equals(organizationFeedback.id) : organizationFeedback.id != null) return false;
+        if (organization != null ? !organization.equals(organizationFeedback.organization) : organizationFeedback.organization != null) return false;
+        return body != null ? body.equals(organizationFeedback.body) : organizationFeedback.body == null;
 
     }
 

@@ -40,6 +40,7 @@ public class AnswerService extends AbstractService implements IAnswerService {
     @Override
     public void update(Answer el, SystemUser updater) {
         editionUpdaterInfoEntityFiller.fill(el, updater);
+        answerRepository.save(el);
     }
 
     @Override

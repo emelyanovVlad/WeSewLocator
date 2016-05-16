@@ -79,13 +79,22 @@ public class Db {
         public static final String ORGANIZATION_ID = "id_organization";
     }
     
-    public static class Feedback {
-        public static final String TABLE_NAME = "feedback";
-        public static final String ID = "id_feedback";
+    public static class OrganizationFeedback {
+        public static final String TABLE_NAME = "org_feedback";
+        public static final String ID = "id_org_feedback";
         public static final String BODY = "body";
         public static final String RATING = "rating";
         public static final String POSTER_ID = "id_user";
         public static final String ORGANIZATION_ID = "id_organization";
+    }
+
+    public static class OrganizationLocationFeedback {
+        public static final String TABLE_NAME = "org_loc_feedback";
+        public static final String ID = "id_org_loc_feedback";
+        public static final String BODY = "body";
+        public static final String RATING = "rating";
+        public static final String POSTER_ID = "id_user";
+        public static final String ORGANIZATION_LOCATION_ID = "id_org_loc";
     }
 
     public static class SystemUser {

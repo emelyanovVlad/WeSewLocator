@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = Db.SystemUser.TABLE_NAME)
-public class SystemUser extends UpdateInfoEntity {
+public class SystemUser extends TimeInfoEntity {
     @Id
     @Column(name = Db.SystemUser.ID, length = 100)
     private String id;

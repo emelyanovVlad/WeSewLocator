@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
  * @author Vladyslav_Yemelianov
  */
 @MappedSuperclass
-public abstract class UpdaterInfoEntity extends UpdateInfoEntity {
+public abstract class UpdaterInfoEntity extends TimeInfoEntity {
 
     @ManyToOne
     @JoinColumn(name = Db.UpdateInfo.CREATOR_ID)

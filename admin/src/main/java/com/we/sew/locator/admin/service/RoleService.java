@@ -1,5 +1,7 @@
 package com.we.sew.locator.admin.service;
 
+import com.we.sew.locator.admin.util.filler.CreationTimeInfoEntityFiller;
+import com.we.sew.locator.admin.util.filler.EditionTimeInfoEntityFiller;
 import com.we.sew.locator.bean.RoleBean;
 import com.we.sew.locator.db.entity.Role;
 import com.we.sew.locator.db.entity.SystemUser;
@@ -16,7 +18,12 @@ import java.util.stream.Collectors;
  * @author Vladyslav_Yemelianov
  */
 @Service
-public class RoleService extends AbstractService implements IRoleService {
+public class RoleService implements IRoleService {
+
+    @Autowired
+    private CreationTimeInfoEntityFiller creationTimeInfoEntityFiller;
+    @Autowired
+    private EditionTimeInfoEntityFiller editionTimeInfoEntityFiller;
     @Autowired
     private RoleRepository roleRepository;
     private static final String ROLE = "ROLE_";
@@ -35,6 +42,7 @@ public class RoleService extends AbstractService implements IRoleService {
     public void create(RoleBean el, SystemUser creator) {
         Role role = new Role();
         role.setName(ROLE + el.getName().toUpperCase());
+        creationTimeInfoEntityFiller.fill(role, creator);
         roleRepository.save(role);
     }
 
@@ -53,7 +61,7 @@ public class RoleService extends AbstractService implements IRoleService {
 
     @Override
     public void update(Role el, SystemUser updater) {
-        editionUpdaterInfoEntityFiller.fill(el, updater);
+        editionTimeInfoEntityFiller.fill(el, updater);
         roleRepository.saveAndFlush(el);
     }
 

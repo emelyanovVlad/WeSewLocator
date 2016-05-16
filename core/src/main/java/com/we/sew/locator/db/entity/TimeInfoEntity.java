@@ -11,7 +11,7 @@ import javax.persistence.MappedSuperclass;
  * @author Vladyslav_Yemelianov
  */
 @MappedSuperclass
-public abstract class UpdateInfoEntity {
+public abstract class TimeInfoEntity {
     @Column(name = Db.UpdateInfo.CREATE_TIME, nullable = false)
     private long creationTime;
 

@@ -1,5 +1,7 @@
 package com.we.sew.locator.admin.service;
 
+import com.we.sew.locator.admin.util.filler.CreationTimeInfoEntityFiller;
+import com.we.sew.locator.admin.util.filler.EditionTimeInfoEntityFiller;
 import com.we.sew.locator.bean.SystemUserBean;
 import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.repository.SystemUserRepository;
@@ -16,7 +18,12 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Service
-public class SystemUserService extends AbstractService implements ISystemUserService {
+public class SystemUserService implements ISystemUserService {
+
+    @Autowired
+    private CreationTimeInfoEntityFiller creationTimeInfoEntityFiller;
+    @Autowired
+    private EditionTimeInfoEntityFiller editionTimeInfoEntityFiller;
 
     @Autowired
     private SystemUserRepository systemUserRepository;
@@ -27,6 +34,7 @@ public class SystemUserService extends AbstractService implements ISystemUserSer
     public void create(SystemUserBean el, SystemUser creator) {
         SystemUser adaptedUser = systemUserAdapter.adapt(el);
         adaptedUser.setId(IdGeneratorUtil.uuId());
+        creationTimeInfoEntityFiller.fill(adaptedUser, creator);
         systemUserRepository.save(adaptedUser);
     }
 
@@ -42,6 +50,7 @@ public class SystemUserService extends AbstractService implements ISystemUserSer
 
     @Override
     public void update(SystemUser el, SystemUser updater) {
+        editionTimeInfoEntityFiller.fill(el, updater);
         systemUserRepository.saveAndFlush(el);
     }
 

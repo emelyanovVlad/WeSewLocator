@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = Db.Role.TABLE_NAME)
-public class Role extends UpdateInfoEntity {
+public class Role extends TimeInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = Db.Role.ID)
