@@ -19,7 +19,7 @@ public class BranchAdapter implements EntityAdapter<Branch, BranchBean> {
     @Override
     public Branch adapt(BranchBean el) {
         Branch branch = new Branch();
-        Category category = categoryService.getBy(el.getTypeName());
+        Category category = categoryService.getBy(el.getCategoryName());
         branch.setName(el.getName());
         branch.setCategory(category);
         return branch;

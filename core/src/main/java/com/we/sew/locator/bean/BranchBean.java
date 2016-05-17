@@ -27,11 +27,11 @@ public class BranchBean {
         this.name = name;
     }
 
-    public String getTypeName() {
+    public String getCategoryName() {
         return categoryName;
     }
 
-    public void setTypeName(String categoryName) {
+    public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
 }

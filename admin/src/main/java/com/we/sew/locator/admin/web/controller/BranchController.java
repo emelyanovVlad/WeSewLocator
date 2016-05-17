@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,6 +22,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
+@Validated
 @RequestMapping(value = WebUtil.Mapping.BRANCHES)
 public class BranchController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BranchController.class);
@@ -35,7 +38,7 @@ public class BranchController extends AbstractAppController {
     }
 
     @RequestMapping(value = WebUtil.Mapping.ADD, method = RequestMethod.POST)
-    public @ResponseBody String addBranch(@Valid BranchBean branchBean, HttpSession session) {
+    public @ResponseBody String addBranch(@Valid @RequestBody BranchBean branchBean, HttpSession session) {
         branchService.create(branchBean, curUser(session));
 
         if (LOGGER.isDebugEnabled()) {

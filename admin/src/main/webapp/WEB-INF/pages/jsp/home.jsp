@@ -20,7 +20,7 @@
                 <ul>
                     <sec:authorize access="hasAnyRole('HEADADMIN', 'ADMIN', 'DATAMANAGER')">
                         <li data-target="/categories" data-form="category_create">Categories</li>
-                        <li data-target="/branches">Branches</li>
+                        <li data-target="/branches" data-form="branch_create">Branches</li>
                         <li data-target="/questions">Questions</li>
                         <li data-target="/answers">Answers</li>
                         <li data-target="/organizations">Organizations</li>
@@ -55,6 +55,7 @@
     <formc:user/>
     <formc:service/>
     <formc:category/>
+    <formc:branch/>
 </div>
 </body>
 </html>

@@ -26,7 +26,7 @@ public class Question extends UpdaterInfoEntity {
     @JoinColumn(name = Db.Question.CATEGORY_ID)
     private Category category;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "askedQuestion")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "askedQuestion")
     private List<QuestionAnswer> answers;
 
     public int getId() {

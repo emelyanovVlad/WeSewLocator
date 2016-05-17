@@ -58,7 +58,7 @@ $(document).ready(function() {
       case '/categories':
         return ['id', 'name', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/branches':
-        return ['id', 'name', 'category', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
+        return ['id', 'name', 'category.name', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/questions':
         return ['id', 'header', 'body', 'category', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/answers':
@@ -107,22 +107,24 @@ $(document).ready(function() {
   }
 
   function initFormSelects(form, mapping) {
+    var formSelect = $(form).find('select');
+    $(formSelect).empty();
+    var dataUrl = formSelect.data('target'),
+        data = getDataFrom(dataUrl);
     switch (mapping) {
         case '/users':
-            var roleSelect = $(form).find('select'),
-                dataUrl = roleSelect.data('target'),
-                data = getDataFrom(dataUrl);
-
             $(data).each(function() {
-                addOptionTo(roleSelect, this.name, this.name);
+                addOptionTo(formSelect, this.name, this.name);
             });
             return;
         case '/services':
-            var categorySelect = $(form).find('select'),
-                dataUrl = categorySelect.data('target'),
-                data = getDataFrom(dataUrl);
             $(data).each(function () {
-                addOptionTo(categorySelect, this.name, this.name);
+                addOptionTo(formSelect, this.name, this.name);
+            });
+            return;
+        case '/branches':
+            $(data).each(function () {
+                addOptionTo(formSelect, this.name, this.name);
             });
             return;
         default:
