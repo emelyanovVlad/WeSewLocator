@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @author Vladyslav_Yemelianov
  */
 @Component
-public class FeedbackAdapter implements EntityAdapter<OrganizationFeedback, OrganizationFeedbackBean> {
+public class OrganizationFeedbackAdapter implements EntityAdapter<OrganizationFeedback, OrganizationFeedbackBean> {
     @Autowired
     private IOrganizationService organizationService;
 

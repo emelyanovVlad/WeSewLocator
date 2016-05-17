@@ -6,5 +6,5 @@ import com.we.sew.locator.db.entity.OrganizationLocationFeedback;
 /**
  * @author Vladyslav_Yemelianov
  */
-public interface OrganizationLocationFeedbackService extends GenericService<OrganizationLocationFeedbackBean, OrganizationLocationFeedback, String> {
+public interface IOrganizationLocationFeedbackService extends GenericService<OrganizationLocationFeedback, OrganizationLocationFeedbackBean, String> {
 }

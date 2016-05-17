@@ -7,7 +7,7 @@ import com.we.sew.locator.db.repository.OrganizationFeedbackRepository;
 import com.we.sew.locator.admin.service.api.AbstractService;
 import com.we.sew.locator.admin.service.api.IOrganizationFeedbackService;
 import com.we.sew.locator.admin.util.IdGeneratorUtil;
-import com.we.sew.locator.admin.util.adapter.FeedbackAdapter;
+import com.we.sew.locator.admin.util.adapter.OrganizationFeedbackAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +21,11 @@ public class OrganizationFeedbackService extends AbstractService implements IOrg
     @Autowired
     private OrganizationFeedbackRepository organizationFeedbackRepository;
     @Autowired
-    private FeedbackAdapter feedbackAdapter;
+    private OrganizationFeedbackAdapter organizationFeedbackAdapter;
 
     @Override
     public void create(OrganizationFeedbackBean el, SystemUser creator) {
-        OrganizationFeedback adaptedFeed = feedbackAdapter.adapt(el);
+        OrganizationFeedback adaptedFeed = organizationFeedbackAdapter.adapt(el);
         adaptedFeed.setId(IdGeneratorUtil.uuId());
         creationUpdaterInfoEntityFiller.fill(adaptedFeed, creator);
     }
