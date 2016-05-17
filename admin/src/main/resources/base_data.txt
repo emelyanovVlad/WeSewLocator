@@ -1,4 +1,4 @@
 use wesewlocator;
-insert into role(name_value, create_time, update_time) values('ADMIN', 20000000, 20000000);
-insert into system_user(id_user, create_time, update_time, birth_date, email, full_name, last_login, `password`, id_user_creator, id_user_updater, id_role)
-values ('stringID1', 2000000, 2000000, 2000000, 'emelyanov.vladyslav@gmail.com', 'Vladyslav Yemelianov',0, 'pass11', 'stringID1', 'stringID1', 1);
+insert into role(name_value, create_time, update_time) values('ROLE_HEADADMIN', 20000000, 20000000);
+insert into system_user(id_user, create_time, update_time, birth_date, email, full_name, last_login, `password`, id_role)
+values ('stringID1',2000000, 20000000, 2000000, 'emelyanov.vladyslav@gmail.com', 'Vladyslav Yemelianov', 0, 'ce9e9dd20d774e574fe4d89af42d1a39',  1);

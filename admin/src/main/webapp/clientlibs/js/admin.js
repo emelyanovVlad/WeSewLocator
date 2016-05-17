@@ -45,9 +45,9 @@ $(document).ready(function() {
       case '/services':
         return ['ID', 'Name', 'Category', 'Created', 'Created by ', 'Updated', 'Updated by'];
       case '/users':
-        return ['ID', 'Full Name', 'Email', 'Birth date', 'Role', 'Last login', 'Created', 'Created by ', 'Updated', 'Updated by'];
+        return ['ID', 'Full Name', 'Email', 'Birth date', 'Role', 'Last login', 'Created', 'Updated'];
       case '/roles':
-        return ['ID', 'Name', 'Created', 'Created by ', 'Updated', 'Updated by'];
+        return ['ID', 'Name', 'Created', 'Updated'];
       default:
         return '';
     }
@@ -70,9 +70,9 @@ $(document).ready(function() {
       case '/services':
         return ['id', 'name', 'category', 'creationTime', 'creator', 'updateTime', 'updater'];
       case '/users':
-        return ['id', 'fullName', 'email', 'birthDate', 'role', 'lastLogin', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'fullName', 'email', 'birthDate', 'role', 'lastLogin', 'creationTime', 'updateTime'];
       case '/roles':
-        return ['id', 'name', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'name', 'creationTime', 'updateTime'];
       default:
         return '';
     }
