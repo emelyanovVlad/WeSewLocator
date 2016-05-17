@@ -24,7 +24,7 @@ public class Service extends UpdaterInfoEntity {
     @JoinColumn(name = Db.Service.CATEGORY_ID)
     private Category category;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = Db.ServiceOrganization.TABLE_NAME,
             joinColumns = @JoinColumn(name = Db.ServiceOrganization.SERVICE_ID, nullable = false, updatable = false),
             inverseJoinColumns = @JoinColumn(name = Db.ServiceOrganization.ORG_ID, nullable = false, updatable = false))

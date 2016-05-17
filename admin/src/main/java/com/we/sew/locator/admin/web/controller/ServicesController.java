@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,7 +36,7 @@ public class ServicesController extends AbstractAppController {
     }
 
     @RequestMapping(value = WebUtil.Mapping.ADD, method = RequestMethod.POST)
-    public @ResponseBody String addService(@Valid ServiceBean serviceBean, HttpSession session) {
+    public @ResponseBody String addService(@Valid @RequestBody ServiceBean serviceBean, HttpSession session) {
         serviceService.create(serviceBean, curUser(session));
 
         if (LOGGER.isDebugEnabled()) {

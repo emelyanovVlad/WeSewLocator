@@ -68,7 +68,7 @@ $(document).ready(function() {
       case '/locations':
         return ['id', 'name', 'latitude', 'longitude', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/services':
-        return ['id', 'name', 'category', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
+        return ['id', 'name', 'category.name', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/users':
         return ['id', 'fullName', 'email', 'birthDate', 'role.name', 'lastLogin', 'creationTime', 'updateTime'];
       case '/roles':

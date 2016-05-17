@@ -15,7 +15,7 @@
                         <div class="form-group">
                             <label for="selectCat" class="col-lg-3 control-label">Category</label>
                             <div class="col-lg-9">
-                              <select id='selectCat' class='form-control' data-target="/categories">
+                              <select id='selectCat' name='categoryName' class='form-control' data-target="/categories">
 
                               </select>
                             </div>
