@@ -33,7 +33,7 @@
               <div class="form-group">
                 <label for="selectRole" class="col-lg-3 control-label">Role</label>
                 <div class="col-lg-9">
-                  <select id='selectRole' class='form-control' data-target="/roles">
+                  <select id='selectRole' name="roleName" class='form-control' data-target="/roles">
 
                   </select>
                 </div>

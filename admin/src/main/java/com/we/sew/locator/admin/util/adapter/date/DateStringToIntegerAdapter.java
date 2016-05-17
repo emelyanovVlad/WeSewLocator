@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
  */
 @Component
 public class DateStringToIntegerAdapter implements EntityAdapter<Long, String> {
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Autowired
     private DateToIntegerAdapter dateToIntegerAdapter;

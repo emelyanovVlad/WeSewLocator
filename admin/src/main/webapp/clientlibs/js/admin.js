@@ -119,7 +119,7 @@ $(document).ready(function() {
             return;
         case '/services':
             var categorySelect = $(form).find('select'),
-                dataUrl = roleSelect.data('target'),
+                dataUrl = categorySelect.data('target'),
                 data = getDataFrom(dataUrl);
             $(data).each(function () {
                 addOptionTo(categorySelect, this.name, this.name);
@@ -231,6 +231,9 @@ function serializeForm(form) {
     };
 
     $(form).find('input').each(function() {
+      add(objectGraph, $(this).attr('name').split('.'), $(this).val());
+    });
+    $(form).find('select').each(function() {
       add(objectGraph, $(this).attr('name').split('.'), $(this).val());
     });
     return JSON.stringify(objectGraph);

@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,14 +48,14 @@ public class SystemUsersController extends AbstractAppController {
     public @ResponseBody String addSystemUser(@Valid @RequestBody AdminSystemUserBean userBean, HttpSession session) {
         userService.create(userBean, curUser(session));
         LOGGER.debug(userBean.getEmail() + " created with role " + userBean.getRoleName());
-        return "User created successfully";
+        return userBean.getEmail();
     }
 
     @RequestMapping(value = WebUtil.Mapping.DELETE, method = RequestMethod.POST)
     public String deleteUser(@RequestParam String userId) {
         SystemUser deletedUser = userService.delete(userId);
         LOGGER.warn(deletedUser.getEmail() + " was deleted.");
-        return deletedUser.toString();
+        return deletedUser.getEmail();
     }
 
     @RequestMapping(value = WebUtil.Mapping.EDIT, method = RequestMethod.POST)
@@ -67,7 +68,7 @@ public class SystemUsersController extends AbstractAppController {
 
         userService.update(systemUser, curUser(session));
         LOGGER.debug(systemUser.getEmail() + " was updated. ");
-        return systemUser.getEmail() + " was updated.";
+        return systemUser.getEmail();
     }
 
     private void adaptEntity(SystemUser systemUser, AdminSystemUserBean userBean) {

@@ -30,6 +30,9 @@ public class RoleService implements IRoleService {
 
     @Override
     public Role getBy(String name) {
+        if (!name.startsWith(ROLE)) {
+            name = ROLE + name;
+        }
         return roleRepository.findOneByName(name);
     }
 

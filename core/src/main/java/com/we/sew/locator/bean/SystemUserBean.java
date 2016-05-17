@@ -18,7 +18,7 @@ public class SystemUserBean {
     private String email;
 
     @NotBlank
-    @Range(min = 6, max = 30)
+    @Pattern(regexp = "[A-Za-z0-9\\.]{4,50}")
     private String password;
 
     @NotBlank
@@ -28,10 +28,6 @@ public class SystemUserBean {
     @NotBlank
     @Pattern(regexp = Consts.DATE_PATTERN)
     private String birthDate;
-
-    @NotBlank
-    @Pattern(regexp = Consts.CAPITALIZED_WORD)
-    private String roleName;
 
     public String getEmail() {
         return email;
@@ -64,5 +60,4 @@ public class SystemUserBean {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
-
 }

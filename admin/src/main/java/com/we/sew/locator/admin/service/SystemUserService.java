@@ -1,8 +1,11 @@
 package com.we.sew.locator.admin.service;
 
+import com.we.sew.locator.admin.service.api.IRoleService;
 import com.we.sew.locator.admin.util.filler.CreationTimeInfoEntityFiller;
 import com.we.sew.locator.admin.util.filler.EditionTimeInfoEntityFiller;
+import com.we.sew.locator.bean.AdminSystemUserBean;
 import com.we.sew.locator.bean.SystemUserBean;
+import com.we.sew.locator.db.entity.Role;
 import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.repository.SystemUserRepository;
 import com.we.sew.locator.admin.service.api.AbstractService;
@@ -29,12 +32,17 @@ public class SystemUserService implements ISystemUserService {
     private SystemUserRepository systemUserRepository;
     @Autowired
     private SystemUserAdapter systemUserAdapter;
+    @Autowired
+    private IRoleService roleService;
 
     @Override
-    public void create(SystemUserBean el, SystemUser creator) {
+    public void create(AdminSystemUserBean el, SystemUser creator) {
         SystemUser adaptedUser = systemUserAdapter.adapt(el);
         adaptedUser.setId(IdGeneratorUtil.uuId());
+        Role foundRole = roleService.getBy(el.getRoleName());
+        adaptedUser.setRole(foundRole);
         creationTimeInfoEntityFiller.fill(adaptedUser, creator);
+
         systemUserRepository.save(adaptedUser);
     }
 
