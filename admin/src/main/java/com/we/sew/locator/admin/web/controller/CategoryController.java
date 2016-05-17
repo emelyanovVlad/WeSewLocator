@@ -9,10 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -22,6 +20,7 @@ import java.util.List;
  * @author Vladyslav_Yemelianov
  */
 @Controller
+@Validated
 @RequestMapping(value = WebUtil.Mapping.CATEGORIES)
 public class CategoryController extends AbstractAppController {
     private static final Logger LOGGER = LoggerFactory.getLogger(CategoryController.class);
@@ -35,7 +34,7 @@ public class CategoryController extends AbstractAppController {
     }
 
     @RequestMapping(value = WebUtil.Mapping.ADD, method = RequestMethod.POST)
-    public @ResponseBody String addType(@Valid CategoryBean categoryBean, HttpSession session) {
+    public @ResponseBody String addType(@Valid @RequestBody CategoryBean categoryBean, HttpSession session) {
         categoryService.create(categoryBean, curUser(session));
 
         LOGGER.debug(categoryBean.getName() + " created.");

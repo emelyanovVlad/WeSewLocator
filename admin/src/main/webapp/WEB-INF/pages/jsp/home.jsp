@@ -19,13 +19,13 @@
             <div class="menu">
                 <ul>
                     <sec:authorize access="hasAnyRole('HEADADMIN', 'ADMIN', 'DATAMANAGER')">
-                        <li data-target="/categories">Categories</li>
+                        <li data-target="/categories" data-form="category_create">Categories</li>
                         <li data-target="/branches">Branches</li>
                         <li data-target="/questions">Questions</li>
                         <li data-target="/answers">Answers</li>
                         <li data-target="/organizations">Organizations</li>
                         <li data-target="/locations">Locations</li>
-                        <li data-target="/services">Services</li>
+                        <li data-target="/services" data-form="service_create">Services</li>
                     </sec:authorize>
                     <sec:authorize access="hasRole('HEADADMIN')">
                         <li data-target="/users" data-form="user_create">Users</li>
@@ -53,6 +53,8 @@
 <div id="create_forms">
     <formc:role/>
     <formc:user/>
+    <formc:service/>
+    <formc:category/>
 </div>
 </body>
 </html>

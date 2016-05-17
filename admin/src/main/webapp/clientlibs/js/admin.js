@@ -56,21 +56,21 @@ $(document).ready(function() {
   function getTableColumnDefsFor(mapping) {
     switch (mapping) {
       case '/categories':
-        return ['id', 'name', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'name', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/branches':
-        return ['id', 'name', 'category', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'name', 'category', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/questions':
-        return ['id', 'header', 'body', 'category', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'header', 'body', 'category', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/answers':
-        return ['id', 'body', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'body', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/organizations':
-        return ['id', 'name', 'description', 'foundationDate', 'category', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'name', 'description', 'foundationDate', 'category', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/locations':
-        return ['id', 'name', 'latitude', 'longitude', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'name', 'latitude', 'longitude', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/services':
-        return ['id', 'name', 'category', 'creationTime', 'creator', 'updateTime', 'updater'];
+        return ['id', 'name', 'category', 'creationTime', 'creator.fullName', 'updateTime', 'updater.fullName'];
       case '/users':
-        return ['id', 'fullName', 'email', 'birthDate', 'role', 'lastLogin', 'creationTime', 'updateTime'];
+        return ['id', 'fullName', 'email', 'birthDate', 'role.name', 'lastLogin', 'creationTime', 'updateTime'];
       case '/roles':
         return ['id', 'name', 'creationTime', 'updateTime'];
       default:
@@ -115,6 +115,14 @@ $(document).ready(function() {
 
             $(data).each(function() {
                 addOptionTo(roleSelect, this.name, this.name);
+            });
+            return;
+        case '/services':
+            var categorySelect = $(form).find('select'),
+                dataUrl = roleSelect.data('target'),
+                data = getDataFrom(dataUrl);
+            $(data).each(function () {
+                addOptionTo(categorySelect, this.name, this.name);
             });
             return;
         default:
