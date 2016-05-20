@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = Db.OrganizationLocationFeedback.TABLE_NAME)
-public class OrganizationLocationFeedback extends UpdaterInfoEntity {
+public class OrganizationLocationFeedback extends AbstractFeedback {
 
     @Id
     @Column(name = Db.OrganizationLocationFeedback.ID, length = 100)
