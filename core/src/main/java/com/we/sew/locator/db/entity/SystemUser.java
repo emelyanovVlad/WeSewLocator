@@ -132,6 +132,7 @@ public class SystemUser extends TimeInfoEntity {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("SystemUser{");
+        sb.append(super.toString());
         sb.append("id='").append(id).append('\'');
         sb.append(", email='").append(email).append('\'');
         sb.append(", password='").append(password).append('\'');

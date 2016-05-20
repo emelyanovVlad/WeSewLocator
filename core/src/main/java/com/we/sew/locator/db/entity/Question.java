@@ -95,6 +95,7 @@ public class Question extends UpdaterInfoEntity {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Question{");
+        sb.append(super.toString());
         sb.append("id=").append(id);
         sb.append(", header='").append(header).append('\'');
         sb.append(", body='").append(body).append('\'');

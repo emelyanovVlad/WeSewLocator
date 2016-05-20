@@ -78,22 +78,22 @@ public class Db {
         public static final String LOCATION_ID = "id_location";
         public static final String ORGANIZATION_ID = "id_organization";
     }
-    
+
+    public static class Feedback {
+        public static final String RATING = "rating";
+        public static final String BODY = "body";
+
+    }
+
     public static class OrganizationFeedback {
         public static final String TABLE_NAME = "org_feedback";
         public static final String ID = "id_org_feedback";
-        public static final String BODY = "body";
-        public static final String RATING = "rating";
-        public static final String POSTER_ID = "id_user";
         public static final String ORGANIZATION_ID = "id_organization";
     }
 
     public static class OrganizationLocationFeedback {
         public static final String TABLE_NAME = "org_loc_feedback";
         public static final String ID = "id_org_loc_feedback";
-        public static final String BODY = "body";
-        public static final String RATING = "rating";
-        public static final String POSTER_ID = "id_user";
         public static final String ORGANIZATION_LOCATION_ID = "id_org_loc";
     }
 
@@ -125,6 +125,22 @@ public class Db {
         public static final String TABLE_NAME = "service_organization";
         public static final String SERVICE_ID = "id_service";
         public static final String ORG_ID = "id_organization";
+    }
+
+    public static class Mood {
+        public static final String ID = "id_mood";
+        public static final String MOOD = "mood";
+        public static final String USER_ID = "id_user";
+    }
+
+    public static class OrgFeedbackUserMood {
+        public static final String TABLE_NAME = "org_feedback_user_mood";
+        public static final String ORG_ID = "id_org";
+    }
+
+    public static class OrgLocFeedbackUserMood {
+        public static final String TABLE_NAME = "org_loc_feedback_user_mood";
+        public static final String ORG_LOC_ID = "id_org_loc";
     }
 
     private Db(){}

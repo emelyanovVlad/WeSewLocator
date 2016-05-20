@@ -1,7 +1,7 @@
 package com.we.sew.locator.admin.util.adapter;
 
 import com.we.sew.locator.bean.OrganizationFeedbackBean;
-import com.we.sew.locator.db.entity.OrganizationFeedback;
+import com.we.sew.locator.db.entity.feedback.OrganizationFeedback;
 import com.we.sew.locator.admin.service.api.IOrganizationService;
 import com.we.sew.locator.admin.util.adapter.api.EntityAdapter;
 import org.springframework.beans.factory.annotation.Autowired;

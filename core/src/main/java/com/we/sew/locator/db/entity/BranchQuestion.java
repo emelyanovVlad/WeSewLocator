@@ -84,6 +84,7 @@ public class BranchQuestion extends UpdaterInfoEntity {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("BranchQuestion{");
+        sb.append(super.toString());
         sb.append("id=").append(id);
         sb.append(", branch=").append(branch);
         sb.append(", question=").append(question);

@@ -1,6 +1,6 @@
 package com.we.sew.locator.db.repository;
 
-import com.we.sew.locator.db.entity.OrganizationFeedback;
+import com.we.sew.locator.db.entity.feedback.OrganizationFeedback;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -86,6 +86,7 @@ public class Service extends UpdaterInfoEntity {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Service{");
+        sb.append(super.toString());
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", category=").append(category);

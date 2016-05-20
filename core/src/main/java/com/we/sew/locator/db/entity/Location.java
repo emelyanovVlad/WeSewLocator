@@ -24,7 +24,7 @@ public class Location extends UpdaterInfoEntity {
     @Column(name = Db.Location.LONGITUDE, nullable = false)
     private double longitude;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "location")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "location")
     private List<OrganizationLocation> organizations;
 
     public String getId() {
@@ -97,6 +97,7 @@ public class Location extends UpdaterInfoEntity {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Location{");
+        sb.append(super.toString());
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", latitude=").append(latitude);

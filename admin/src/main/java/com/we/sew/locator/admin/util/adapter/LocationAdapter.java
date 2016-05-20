@@ -15,7 +15,7 @@ public class LocationAdapter implements EntityAdapter<Location, LocationBean> {
     public Location adapt(LocationBean el) {
         Location location = new Location();
         location.setLatitude(el.getLatitude());
-        location.setLongitude(el.getLongtitude());
+        location.setLongitude(el.getLongitude());
         location.setName(el.getName());
         return location;
     }

@@ -118,3 +118,9 @@ html, body {
     display:block;
     margin: 10px 0 10px 0;
 }
+
+.map-holder {
+    height:400px;
+    margin:0;
+    padding:0;
+}

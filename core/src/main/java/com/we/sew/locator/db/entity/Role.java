@@ -62,6 +62,7 @@ public class Role extends TimeInfoEntity {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Role{");
+        sb.append(super.toString());
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append('}');

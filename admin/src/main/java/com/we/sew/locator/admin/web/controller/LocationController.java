@@ -62,7 +62,7 @@ public class LocationController extends AbstractAppController {
     private void updateOldLocation(Location location, LocationBean locationBean) {
         location.setName(locationBean.getName());
         location.setLatitude(locationBean.getLatitude());
-        location.setLongitude(locationBean.getLongtitude());
+        location.setLongitude(locationBean.getLongitude());
     }
 
     @RequestMapping(value = WebUtil.Mapping.FIND, method = RequestMethod.GET)

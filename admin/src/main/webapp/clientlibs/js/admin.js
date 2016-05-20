@@ -107,22 +107,33 @@ $(document).ready(function() {
   }
 
   function initFormSelects(form, mapping) {
-    var formSelect = $(form).find('select');
-    $(formSelect).empty();
-    var dataUrl = formSelect.data('target'),
-        data = getDataFrom(dataUrl);
     switch (mapping) {
         case '/users':
+            var formSelect = $(form).find('select');
+            $(formSelect).empty();
+            var dataUrl = formSelect.data('target'),
+                data = getDataFrom(dataUrl);
+
             $(data).each(function() {
                 addOptionTo(formSelect, this.name, this.name);
             });
             return;
         case '/services':
+            var formSelect = $(form).find('select');
+                $(formSelect).empty();
+            var dataUrl = formSelect.data('target'),
+                data = getDataFrom(dataUrl);
+
             $(data).each(function () {
                 addOptionTo(formSelect, this.name, this.name);
             });
             return;
         case '/branches':
+            var formSelect = $(form).find('select');
+            $(formSelect).empty();
+            var dataUrl = formSelect.data('target'),
+                data = getDataFrom(dataUrl);
+
             $(data).each(function () {
                 addOptionTo(formSelect, this.name, this.name);
             });
@@ -132,12 +143,22 @@ $(document).ready(function() {
     }
   }
 
+  function initAdditionalData(form, mapping) {
+    switch (mapping) {
+        case '/locations':
+            initMap(form);
+        return;
+    }
+  }
+
   function createButtonClickedHandler() {
     var $createForms = $('#create_forms'),
       currentEntity = $('.menu').find('li.active');
     var chosenForm = $createForms.find('#' + currentEntity.data('form'));
     chosenForm.modal('show');
-    initFormSelects(chosenForm, currentEntity.data('target'));
+    var mapping = currentEntity.data('target');
+    initFormSelects(chosenForm, mapping);
+    initAdditionalData(chosenForm, mapping);
   }
 
   function ajaxCreationSuccessHandler(data) {
@@ -218,6 +239,40 @@ function TableBuilder(data, columns) {
   return table;
 }
 
+function initMap(form) {
+    var mapDiv = $(form).find('.map-holder');
+    var mapOptions = {
+        zoom: 5,
+        center: {lat: -25.363, lng: 131.044},
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+    var map = new google.maps.Map(mapDiv.get(0), mapOptions);
+    var positionMarker;
+
+    google.maps.event.addListener(map, 'click', onMapClickedHandler);
+
+    function onMapClickedHandler(event) {
+        var latInput = $(form).find('#inputLat'),
+            longInput = $(form).find('#inputLong');
+        $(latInput).val(event.latLng.lat());
+        $(longInput).val(event.latLng.lng());
+        addMarker(event.latLng);
+    };
+
+    function addMarker(location) {
+        if (positionMarker) {
+            positionMarker.setMap(null);
+        }
+
+        positionMarker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "You choose location",
+            zIndex: 999
+        });
+    };
+};
+
 function serializeForm(form) {
     var objectGraph = {};
     function add(objectGraph, name, value) {
@@ -239,4 +294,4 @@ function serializeForm(form) {
       add(objectGraph, $(this).attr('name').split('.'), $(this).val());
     });
     return JSON.stringify(objectGraph);
-   };
+};

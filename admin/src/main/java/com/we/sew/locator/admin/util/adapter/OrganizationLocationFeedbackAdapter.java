@@ -4,7 +4,7 @@ import com.we.sew.locator.admin.service.api.IOrganizationLocationService;
 import com.we.sew.locator.admin.util.adapter.api.EntityAdapter;
 import com.we.sew.locator.bean.OrganizationLocationFeedbackBean;
 import com.we.sew.locator.db.entity.OrganizationLocation;
-import com.we.sew.locator.db.entity.OrganizationLocationFeedback;
+import com.we.sew.locator.db.entity.feedback.OrganizationLocationFeedback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

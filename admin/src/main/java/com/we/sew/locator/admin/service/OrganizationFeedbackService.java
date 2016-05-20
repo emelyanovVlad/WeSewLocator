@@ -1,7 +1,7 @@
 package com.we.sew.locator.admin.service;
 
 import com.we.sew.locator.bean.OrganizationFeedbackBean;
-import com.we.sew.locator.db.entity.OrganizationFeedback;
+import com.we.sew.locator.db.entity.feedback.OrganizationFeedback;
 import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.repository.OrganizationFeedbackRepository;
 import com.we.sew.locator.admin.service.api.AbstractService;

@@ -1,6 +1,7 @@
 package com.we.sew.locator.db.entity;
 
 import com.we.sew.locator.db.Db;
+import com.we.sew.locator.db.entity.feedback.OrganizationFeedback;
 
 import javax.persistence.*;
 import java.util.List;
@@ -137,6 +138,7 @@ public class Organization extends UpdaterInfoEntity {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Organization{");
+        sb.append(super.toString());
         sb.append("id=").append(id);
         sb.append(", category=").append(category);
         sb.append(", name='").append(name).append('\'');

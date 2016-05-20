@@ -5,7 +5,7 @@ import com.we.sew.locator.admin.service.api.IOrganizationLocationFeedbackService
 import com.we.sew.locator.admin.util.IdGeneratorUtil;
 import com.we.sew.locator.admin.util.adapter.OrganizationLocationFeedbackAdapter;
 import com.we.sew.locator.bean.OrganizationLocationFeedbackBean;
-import com.we.sew.locator.db.entity.OrganizationLocationFeedback;
+import com.we.sew.locator.db.entity.feedback.OrganizationLocationFeedback;
 import com.we.sew.locator.db.entity.SystemUser;
 import com.we.sew.locator.db.repository.OrganizationLocationFeedbackRepository;
 import org.slf4j.Logger;

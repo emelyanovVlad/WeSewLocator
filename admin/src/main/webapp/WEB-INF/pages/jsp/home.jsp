@@ -24,7 +24,7 @@
                         <li data-target="/questions">Questions</li>
                         <li data-target="/answers">Answers</li>
                         <li data-target="/organizations">Organizations</li>
-                        <li data-target="/locations">Locations</li>
+                        <li data-target="/locations" data-form="location_create">Locations</li>
                         <li data-target="/services" data-form="service_create">Services</li>
                     </sec:authorize>
                     <sec:authorize access="hasRole('HEADADMIN')">
@@ -56,6 +56,7 @@
     <formc:service/>
     <formc:category/>
     <formc:branch/>
+    <formc:location/>
 </div>
 </body>
 </html>

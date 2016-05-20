@@ -13,4 +13,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+    <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjIWLpY_8T84T4VUoCGpMJZvFwDsCzY0s&callback=initMap">
+        </script>
 </head>

@@ -15,7 +15,7 @@ public class LocationBean {
 
     private double latitude;
 
-    private double longtitude;
+    private double longitude;
 
     public String getName() {
         return name;
@@ -33,11 +33,11 @@ public class LocationBean {
         this.latitude = latitude;
     }
 
-    public double getLongtitude() {
-        return longtitude;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setLongtitude(double longtitude) {
-        this.longtitude = longtitude;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }
