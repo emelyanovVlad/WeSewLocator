@@ -1,6 +1,7 @@
-package com.we.sew.locator.db.entity;
+package com.we.sew.locator.db.entity.api;
 
 import com.we.sew.locator.db.Db;
+import com.we.sew.locator.db.entity.SystemUser;
 
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;

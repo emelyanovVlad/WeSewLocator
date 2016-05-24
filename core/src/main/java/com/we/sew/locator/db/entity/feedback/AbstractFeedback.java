@@ -1,7 +1,7 @@
 package com.we.sew.locator.db.entity.feedback;
 
 import com.we.sew.locator.db.Db;
-import com.we.sew.locator.db.entity.UpdaterInfoEntity;
+import com.we.sew.locator.db.entity.api.StatusUpdaterInfoEntity;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
  * @author Vladyslav_Yemelianov
  */
 @MappedSuperclass
-public abstract class AbstractFeedback extends UpdaterInfoEntity {
+public abstract class AbstractFeedback extends StatusUpdaterInfoEntity {
 
     @Column(name = Db.Feedback.BODY, nullable = false)
     private String body;

@@ -1,6 +1,7 @@
 package com.we.sew.locator.db.entity;
 
 import com.we.sew.locator.db.Db;
+import com.we.sew.locator.db.entity.api.StatusUpdaterInfoEntity;
 import com.we.sew.locator.db.entity.feedback.OrganizationLocationFeedback;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = Db.OrganizationLocation.TABLE_NAME)
-public class OrganizationLocation extends UpdaterInfoEntity {
+public class OrganizationLocation extends StatusUpdaterInfoEntity {
 
     @Id
     @Column(name = Db.OrganizationLocation.ID)

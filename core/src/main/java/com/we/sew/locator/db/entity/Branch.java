@@ -1,6 +1,7 @@
 package com.we.sew.locator.db.entity;
 
 import com.we.sew.locator.db.Db;
+import com.we.sew.locator.db.entity.api.StatusUpdaterInfoEntity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = Db.Branch.TABLE_NAME)
-public class Branch extends UpdaterInfoEntity {
+public class Branch extends StatusUpdaterInfoEntity {
     @Id
     @Column(name = Db.Branch.ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

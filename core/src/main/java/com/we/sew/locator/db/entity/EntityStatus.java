@@ -9,23 +9,16 @@ import javax.persistence.*;
  * @author Vladyslav_Yemelianov
  */
 @Entity
-@Table(name = Db.Role.TABLE_NAME)
-public class Role extends TimeInfoEntity {
+@Table(name = Db.EntityStatus.TABLE_NAME)
+public class EntityStatus extends TimeInfoEntity {
+
     @Id
+    @Column(name = Db.EntityStatus.ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = Db.Role.ID)
     private int id;
 
-    @Column(name = Db.Role.NAME, nullable = false, length = 40)
-    private String name;
-
-    public Role() {
-    }
-
-    public Role(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    @Column(name = Db.EntityStatus.NAME, unique = true, nullable = false)
+    private String value;
 
     public int getId() {
         return id;
@@ -35,12 +28,12 @@ public class Role extends TimeInfoEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getValue() {
+        return value;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setValue(String value) {
+        this.value = value;
     }
 
     @Override
@@ -48,24 +41,26 @@ public class Role extends TimeInfoEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Role role = (Role) o;
+        EntityStatus that = (EntityStatus) o;
 
-        return id == role.id && (name != null ? name.equals(role.name) : role.name == null);
+        if (id != that.id) return false;
+        return value != null ? value.equals(that.value) : that.value == null;
+
     }
 
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (value != null ? value.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Role{");
+        final StringBuilder sb = new StringBuilder("EntityStatus{");
         sb.append(super.toString());
         sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
+        sb.append(", value='").append(value).append('\'');
         sb.append('}');
         return sb.toString();
     }

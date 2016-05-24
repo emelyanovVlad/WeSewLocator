@@ -1,4 +1,4 @@
-package com.we.sew.locator.db.entity;
+package com.we.sew.locator.db.entity.api;
 
 import com.we.sew.locator.db.Db;
 

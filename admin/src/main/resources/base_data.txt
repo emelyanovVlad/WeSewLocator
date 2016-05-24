@@ -1,4 +1,11 @@
 use wesewlocator;
+insert into entity_status (name_value, create_time, update_time) VALUES ('OK', 0, 0);
+insert into entity_status (name_value, create_time, update_time) VALUES ('PROPOSED', 0, 0);
+insert into entity_status (name_value, create_time, update_time) VALUES ('DELETED', 0, 0);
+insert into entity_status (name_value, create_time, update_time) VALUES ('BLOCKED', 0, 0);
+insert into entity_status (name_value, create_time, update_time) VALUES ('UPDATED', 0, 0);
+insert into entity_status (name_value, create_time, update_time) VALUES ('DECLINED', 0, 0);
+insert into entity_status (name_value, create_time, update_time) VALUES ('REGISTERED', 0, 0);
 insert into role(name_value, create_time, update_time) values('ROLE_HEADADMIN', 20000000, 20000000);
-insert into system_user(id_user, create_time, update_time, birth_date, email, full_name, last_login, `password`, id_role)
-values ('stringID1',2000000, 20000000, 2000000, 'emelyanov.vladyslav@gmail.com', 'Vladyslav Yemelianov', 0, 'ce9e9dd20d774e574fe4d89af42d1a39',  1);
+insert into system_user(id_user, create_time, update_time, birth_date, email, full_name, last_login, `password`, id_role, id_entity_status)
+values ('stringID1',2000000, 20000000, 2000000, 'emelyanov.vladyslav@gmail.com', 'Vladyslav Yemelianov', 0, 'ce9e9dd20d774e574fe4d89af42d1a39',  1, 1);

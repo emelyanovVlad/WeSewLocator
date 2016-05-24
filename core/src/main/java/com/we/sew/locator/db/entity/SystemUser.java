@@ -1,6 +1,8 @@
 package com.we.sew.locator.db.entity;
 
 import com.we.sew.locator.db.Db;
+import com.we.sew.locator.db.entity.api.StatusTimeInfoEntity;
+import com.we.sew.locator.db.entity.api.TimeInfoEntity;
 
 import javax.persistence.*;
 
@@ -9,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = Db.SystemUser.TABLE_NAME)
-public class SystemUser extends TimeInfoEntity {
+public class SystemUser extends StatusTimeInfoEntity {
     @Id
     @Column(name = Db.SystemUser.ID, length = 100)
     private String id;

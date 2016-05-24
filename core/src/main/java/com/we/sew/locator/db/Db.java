@@ -29,6 +29,7 @@ public class Db {
         public static final String TABLE_NAME = "answer";
         public static final String ID = "id_answer";
         public static final String BODY = "body";
+        public static final String STATUS_ID = "id_entity_status";
     }
 
     public static class QuestionAnswer {
@@ -141,6 +142,12 @@ public class Db {
     public static class OrgLocFeedbackUserMood {
         public static final String TABLE_NAME = "org_loc_feedback_user_mood";
         public static final String ORG_LOC_ID = "id_org_loc";
+    }
+
+    public static class EntityStatus {
+        public static final String TABLE_NAME = "entity_status";
+        public static final String ID = "id_entity_status";
+        public static final String NAME = "name_value";
     }
 
     private Db(){}

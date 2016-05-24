@@ -2,7 +2,6 @@ package com.we.sew.locator.db.entity.feedback;
 
 import com.we.sew.locator.db.Db;
 import com.we.sew.locator.db.entity.OrganizationLocation;
-import com.we.sew.locator.db.entity.UpdaterInfoEntity;
 
 import javax.persistence.*;
 

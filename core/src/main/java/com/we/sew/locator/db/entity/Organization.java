@@ -1,6 +1,7 @@
 package com.we.sew.locator.db.entity;
 
 import com.we.sew.locator.db.Db;
+import com.we.sew.locator.db.entity.api.StatusUpdaterInfoEntity;
 import com.we.sew.locator.db.entity.feedback.OrganizationFeedback;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = Db.Organization.TABLE_NAME)
-public class Organization extends UpdaterInfoEntity {
+public class Organization extends StatusUpdaterInfoEntity {
     @Id
     @Column(name = Db.Organization.ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

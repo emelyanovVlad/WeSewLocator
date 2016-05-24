@@ -1,7 +1,7 @@
 package com.we.sew.locator.admin.util.filler;
 
 import com.we.sew.locator.db.entity.SystemUser;
-import com.we.sew.locator.db.entity.UpdaterInfoEntity;
+import com.we.sew.locator.db.entity.api.UpdaterInfoEntity;
 import org.springframework.stereotype.Component;
 
 /**
