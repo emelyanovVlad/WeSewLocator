@@ -6,6 +6,7 @@ import com.we.sew.locator.db.entity.feedback.OrganizationLocationFeedback;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Vladyslav_Yemelianov
@@ -32,6 +33,12 @@ public class OrganizationLocation extends StatusUpdaterInfoEntity {
 
     @OneToMany(mappedBy = "organizationLocation")
     private List<OrganizationLocationFeedback> organizationLocationsFeedback;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = Db.ServiceOrganizationLocation.TABLE_NAME,
+            joinColumns = @JoinColumn(name = Db.ServiceOrganizationLocation.ORG_LOC_ID, nullable = false, updatable = false),
+            inverseJoinColumns = @JoinColumn(name = Db.ServiceOrganizationLocation.SERVICE_ID, nullable = false, updatable = false))
+    private Set<Service> services;
 
     public int getId() {
         return id;
@@ -71,6 +78,14 @@ public class OrganizationLocation extends StatusUpdaterInfoEntity {
 
     public void setOrganizationLocationsFeedback(List<OrganizationLocationFeedback> organizationLocationsFeedback) {
         this.organizationLocationsFeedback = organizationLocationsFeedback;
+    }
+
+    public Set<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(Set<Service> services) {
+        this.services = services;
     }
 
     @Override

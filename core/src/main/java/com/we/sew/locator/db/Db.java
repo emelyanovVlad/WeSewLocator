@@ -123,9 +123,15 @@ public class Db {
     }
 
     public static class ServiceOrganization {
-        public static final String TABLE_NAME = "service_organization";
+        public static final String TABLE_NAME = "service_org";
         public static final String SERVICE_ID = "id_service";
         public static final String ORG_ID = "id_organization";
+    }
+
+    public static class ServiceOrganizationLocation {
+        public static final String TABLE_NAME = "service_org_loc";
+        public static final String SERVICE_ID = "id_service";
+        public static final String ORG_LOC_ID = "id_org_loc";
     }
 
     public static class Mood {

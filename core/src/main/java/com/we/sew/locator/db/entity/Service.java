@@ -32,6 +32,12 @@ public class Service extends StatusUpdaterInfoEntity {
             inverseJoinColumns = @JoinColumn(name = Db.ServiceOrganization.ORG_ID, nullable = false, updatable = false))
     private Set<Organization> organizations;
 
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = Db.ServiceOrganizationLocation.TABLE_NAME,
+            joinColumns = @JoinColumn(name = Db.ServiceOrganizationLocation.SERVICE_ID, nullable = false, updatable = false),
+            inverseJoinColumns = @JoinColumn(name = Db.ServiceOrganizationLocation.ORG_LOC_ID, nullable = false, updatable = false))
+    private Set<OrganizationLocation> organizationLocations;
+
     public int getId() {
         return id;
     }
@@ -62,6 +68,14 @@ public class Service extends StatusUpdaterInfoEntity {
 
     public void setOrganizations(Set<Organization> organizations) {
         this.organizations = organizations;
+    }
+
+    public Set<OrganizationLocation> getOrganizationLocations() {
+        return organizationLocations;
+    }
+
+    public void setOrganizationLocations(Set<OrganizationLocation> organizationLocations) {
+        this.organizationLocations = organizationLocations;
     }
 
     @Override
